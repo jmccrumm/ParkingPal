@@ -6,8 +6,9 @@
 	.navbar
 		%ul.container
 			%h1 Parking Pal
-			%li Home
-			%li Logout
+			%a{:href => root_path}
+				%li Home
+			//%li Logout
 			%i.material-icons error_outline
 	.col-1.menu
 		%div{:style => "display: inline"}
@@ -22,10 +23,6 @@
 				%i.material-icons{:style => "background-color: orange; font-size: 3em", :title => "Stats"} timeline
 
 
-= link_to("Account", user_path)
-= link_to("Map", map_path)
-= link_to("Messages", message_path)
-
 %br
 
 - if current_page?(message_path) || current_page?(message_display_path) || current_page?(message_new_path)
@@ -34,12 +31,15 @@
 	= link_to("Compose", message_new_path)
 	%br
 
-- if current_page?(user_path) || current_page?(schedule_path)
-	= link_to("Main Account", user_path)
+- if current_page?(user_path)
 	= link_to("Schedule", schedule_path)
 	%br
 
-- if current_page?(schedule_path) || current_page?(schedule_modify_path)
-	= link_to("Main Schedule", schedule_path)
-	= link_to("Display test modify", schedule_modify_path)
+- if current_page?(schedule_path)
+	= link_to("< Back to Account", user_path)
+	= link_to("Change Schedule", schedule_modify_path)
+	%br
+
+- if current_page?(schedule_modify_path)
+	= link_to("< Back to Schedule", schedule_path)
 	%br
