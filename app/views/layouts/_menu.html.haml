@@ -12,30 +12,34 @@
 	.col-1.menu
 		%div{:style => "display: inline"}
 		%div
-			%i.material-icons{:style => "background-color: aqua; font-size: 3em", :title => "Map"} map
-			%i.material-icons{:style => "background-color: magenta; font-size: 3em", :title => "Account"} account_circle
-			%i.material-icons{:style => "background-color: aquamarine; font-size: 3em", :title => "Messages"} question_answer
-			%i.material-icons{:style => "background-color: orange; font-size: 3em", :title => "Stats"} timeline
+			%a{:href => map_path}
+				%i.material-icons{:style => "background-color: aqua; font-size: 3em", :title => "Map"} map
+			%a{:href => user_path}
+				%i.material-icons{:style => "background-color: magenta; font-size: 3em", :title => "Account"} account_circle
+			%a{:href => message_path}
+				%i.material-icons{:style => "background-color: aquamarine; font-size: 3em", :title => "Messages"} question_answer
+			%a{:href => stats_path}
+				%i.material-icons{:style => "background-color: orange; font-size: 3em", :title => "Stats"} timeline
 
 
-= link_to("Account", {:controller => 'user', :action => 'index'})
-= link_to("Map", {:controller => 'map', :action => 'index'})
-= link_to("Messages", {:controller => 'message', :action => 'index'})
+= link_to("Account", user_path)
+= link_to("Map", map_path)
+= link_to("Messages", message_path)
 
 %br
 
-- if current_page?({:controller => 'message', :action => 'index'}) || current_page?({:controller => 'message', :action => 'display'}) || current_page?({:controller => 'message', :action => 'new'})
-	= link_to("Inbox", {:controller => 'message', :action => 'index'})
-	= link_to("Link to test message", {:controller => 'message', :action => 'display'})
-	= link_to("Compose", {:controller => 'message', :action => 'new'})
+- if current_page?(message_path) || current_page?(message_display_path) || current_page?(message_new_path)
+	= link_to("Inbox", message_path)
+	= link_to("Link to test message", message_display_path)
+	= link_to("Compose", message_new_path)
 	%br
 
-- if current_page?({:controller => 'user', :action => 'index'}) || current_page?({:controller => 'schedule', :action => 'index'})
-	= link_to("Main Account", {:controller => 'user', :action => 'index'})
-	= link_to("Schedule", {:controller => 'schedule', :action => 'index'})
+- if current_page?(user_path) || current_page?(schedule_path)
+	= link_to("Main Account", user_path)
+	= link_to("Schedule", schedule_path)
 	%br
 
-- if current_page?({:controller => 'schedule', :action => 'index'}) || current_page?({:controller => 'schedule', :action => 'modify'})
-	= link_to("Main Schedule", {:controller => 'schedule', :action => 'index'})
-	= link_to("Display test modify", {:controller => 'schedule', :action => 'modify'})
+- if current_page?(schedule_path) || current_page?(schedule_modify_path)
+	= link_to("Main Schedule", schedule_path)
+	= link_to("Display test modify", schedule_modify_path)
 	%br
