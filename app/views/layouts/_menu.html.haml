@@ -1,3 +1,23 @@
+%meta{:charset => "utf-8"}
+	%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+	%title @ViewBag.Title - My ASP.NET Application
+	%link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}
+	%body
+	.navbar
+		%ul.container
+			%h1 Parking Pal
+			%li Home
+			%li Logout
+			%i.material-icons error_outline
+	.col-1.menu
+		%div{:style => "display: inline"}
+		%div
+			%i.material-icons{:style => "background-color: aqua; font-size: 3em", :title => "Map"} map
+			%i.material-icons{:style => "background-color: magenta; font-size: 3em", :title => "Account"} account_circle
+			%i.material-icons{:style => "background-color: aquamarine; font-size: 3em", :title => "Messages"} question_answer
+			%i.material-icons{:style => "background-color: orange; font-size: 3em", :title => "Stats"} timeline
+
+
 = link_to("Account", {:controller => 'user', :action => 'index'})
 = link_to("Map", {:controller => 'map', :action => 'index'})
 = link_to("Messages", {:controller => 'message', :action => 'index'})
