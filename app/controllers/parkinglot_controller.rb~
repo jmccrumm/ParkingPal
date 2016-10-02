@@ -1,0 +1,2 @@
+class ParkinglotController < ApplicationController
+end

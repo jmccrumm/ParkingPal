@@ -1,0 +1,4 @@
+.content
+	=render 'menu'
+
+%h1 Will display the actual messages here

@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+
+	root 'user#index'
+
+	get 'map/index'
+
+	get 'message/index'
+	get 'message/display'
+	get 'message/new'
+
+	get 'parkinglot/index'
+
+	get 'parkingspot/index'
+
+	get 'schedule/index'
+	get 'schedule/modify'
+
+	get 'layouts/menu'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,21 @@
+= link_to("Account", {:controller => 'user', :action => 'index'})
+= link_to("Map", {:controller => 'map', :action => 'index'})
+= link_to("Messages", {:controller => 'message', :action => 'index'})
+
+%br
+
+- if current_page?({:controller => 'message', :action => 'index'}) || current_page?({:controller => 'message', :action => 'display'}) || current_page?({:controller => 'message', :action => 'new'})
+	= link_to("Inbox", {:controller => 'message', :action => 'index'})
+	= link_to("Link to test message", {:controller => 'message', :action => 'display'})
+	= link_to("Compose", {:controller => 'message', :action => 'new'})
+	%br
+
+- if current_page?({:controller => 'user', :action => 'index'}) || current_page?({:controller => 'schedule', :action => 'index'})
+	= link_to("Main Account", {:controller => 'user', :action => 'index'})
+	= link_to("Schedule", {:controller => 'schedule', :action => 'index'})
+	%br
+
+- if current_page?({:controller => 'schedule', :action => 'index'}) || current_page?({:controller => 'schedule', :action => 'modify'})
+	= link_to("Main Schedule", {:controller => 'schedule', :action => 'index'})
+	= link_to("Display test modify", {:controller => 'schedule', :action => 'modify'})
+	%br
