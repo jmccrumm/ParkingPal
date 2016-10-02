@@ -2,20 +2,20 @@ Rails.application.routes.draw do
 
 	root 'welcome#index'
 
-	get 'user/index'
+	get 'user', to: 'user#index'
 
-	get 'map/index'
+	get 'map', to: 'map#index'
 
-	get 'message/index'
-	get 'message/display'
-	get 'message/new'
+	get 'message', to: 'message#index'
+	get 'message/display', to: 'message#display'
+	get 'message/new', to: 'message#new'
 
-	get 'parkinglot/index'
+	get 'parkinglot', to: 'parkinglot#index'
 
-	get 'parkingspot/index'
+	get 'parkingspot', to: 'parkingspot#index'
 
-	get 'schedule/index'
-	get 'schedule/modify'
+	get 'schedule', to: 'schedule#index'
+	get 'schedule/modify', to: 'schedule#modify'
 
 	get 'layouts/menu'
 	get 'message/menu'
