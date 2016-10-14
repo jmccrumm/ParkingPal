@@ -1,1 +1,0 @@
-image_tag("parkingspot.jpg", border: 0, :size => '520x360')

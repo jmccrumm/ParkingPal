@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20161008201008) do
 
   create_table "parkingspots", force: :cascade do |t|
     t.integer  "location"
-    t.string   "type"
+    t.string   "spot_type"
     t.string   "status"
-    t.text     "occupying"
+    t.integer  "occupying"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
