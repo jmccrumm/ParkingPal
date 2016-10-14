@@ -1,1 +1,10 @@
-=link_to image_tag("parkinglot.jpg", border: 0, :size => '520x360'), parkingspot_path
+-#=link_to image_tag("parkinglot.jpg", border: 0, :size => '520x360'), parkingspot_path
+
+%table#parkingspots
+	%thead
+	%tbody
+		- lot = @parkinglot
+		- @parkingspots each do | spot |
+		- if spot.location % lot.rows == 0
+			%tr
+		%td= spot

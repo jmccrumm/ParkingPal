@@ -27,18 +27,17 @@ ActiveRecord::Schema.define(version: 20161008201008) do
   end
 
   create_table "parkinglots", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "rows"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "parkingspots", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
+    t.integer  "location"
+    t.string   "type"
+    t.string   "status"
+    t.text     "occupying"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
