@@ -11,17 +11,22 @@ parkinglots.each do |lot|
 	Parkinglot.create!(lot)
 end
 
-parkingspots = [{spot_type: 'handicap', status: 'open'}, {spot_type: 'handicap', status: 'taken', occupying: '1'}, 
-	{spot_type: 'handicap', status: 'reserved', occupying: '2'}, {spot_type: 'normal', status: 'open'},
-	{spot_type: 'normal', status: 'taken', occupying: '3'}, {spot_type: 'normal', status: 'reserved', occupying: '4'},
-	{spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'},
-	{spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'},
-	{spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'taken', occupying: '5'},
-	{spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'taken', occupying: '6'},
-	{spot_type: 'normal', status: 'reserved', occupying: '7'}, {spot_type: 'normal', status: 'taken', occupying: '8'},
-	{spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'}
+parkingspots = [{parkinglot_id: '1', spot_type: 'handicap', status: 'open'}, {parkinglot_id: '1', spot_type: 'handicap', status: 'taken', occupying: '1'}, 
+	{parkinglot_id: '1', spot_type: 'handicap', status: 'reserved', occupying: '2'}, {parkinglot_id: '1', spot_type: 'normal', status: 'open'},
+	{parkinglot_id: '1', spot_type: 'normal', status: 'taken', occupying: '3'}, {parkinglot_id: '1', spot_type: 'normal', status: 'reserved', occupying: '4'},
+	{parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'},
+	{parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'},
+	{parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {parkinglot_id: '1', spot_type: 'normal', status: 'taken', occupying: '5'},
+	{parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {parkinglot_id: '1', spot_type: 'normal', status: 'taken', occupying: '6'},
+	{parkinglot_id: '1', spot_type: 'normal', status: 'reserved', occupying: '7'}, {parkinglot_id: '1', spot_type: 'normal', status: 'taken', occupying: '8'},
+	{parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'}
 ]
-@mainlot = Parkinglot.find_by_id(1)
+@mainlot = Parkinglot.find(1)
 parkingspots.each do |spot|
-	@mainlot.parkingspots.create!(spot)
+	Parkingspot.create!(spot)
+end
+spot_id = 1
+parkingspots.each do |spot|
+	@mainlot.parkingspots << Parkingspot.find(spot_id)
+	spot_id = spot_id + 1
 end
