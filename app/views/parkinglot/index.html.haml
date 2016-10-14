@@ -4,10 +4,10 @@
 	%thead
 	%tbody
 		- lot = @parkinglot
-		%tr
 		- @parkingspots.each do |spot|
-			- if spot.location % lot.rows == 0
-				%tr
 			%td= spot
+			- if spot.id % lot.width == 0
+				%tr
+			
 = link_to 'Back', root_path
 

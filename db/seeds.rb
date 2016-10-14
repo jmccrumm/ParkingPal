@@ -6,7 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-parkinglots = [{name: 'Main Lot', rows: '10'}]
+parkinglots = [{name: 'Main Lot', width: '10'}]
+# create lots
 parkinglots.each do |lot|
 	Parkinglot.create!(lot)
 end
@@ -21,12 +22,13 @@ parkingspots = [{parkinglot_id: '1', spot_type: 'handicap', status: 'open'}, {pa
 	{parkinglot_id: '1', spot_type: 'normal', status: 'reserved', occupying: '7'}, {parkinglot_id: '1', spot_type: 'normal', status: 'taken', occupying: '8'},
 	{parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'}
 ]
+
 @mainlot = Parkinglot.find(1)
+# create spots
 parkingspots.each do |spot|
 	Parkingspot.create!(spot)
 end
-spot_id = 1
+# populate into main lot
 parkingspots.each do |spot|
-	@mainlot.parkingspots << Parkingspot.find(spot_id)
-	spot_id = spot_id + 1
+	@mainlot.parkingspots.create!(spot)
 end
