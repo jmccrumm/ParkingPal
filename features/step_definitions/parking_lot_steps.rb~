@@ -5,7 +5,7 @@ end
 
 When(/^I click on a particular "([^"]*)"$/) do |location|
   #pending # Write code here that turns the phrase above into concrete actions
-	visit parkingspot_path(location)
+	visit 'parkingspot_path(location)'
 end
 
 Then(/^I should see available options for that "([^"]*)"$/) do |location|

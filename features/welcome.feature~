@@ -1,0 +1,12 @@
+Feature: Welcome
+
+Scenario: Viewing application's welcome page
+Given there's a link titled "map" with "map" content
+When I am on the welcomepage
+Then I should see the "map" link
+
+Feature: Welcome Image
+
+Scenario: I view the main page I aspect to see image
+When I am on the welcomepage
+Then I should see the "home" image

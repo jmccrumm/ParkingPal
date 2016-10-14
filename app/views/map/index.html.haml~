@@ -1,1 +1,10 @@
-=link_to image_tag("ParkingMap1.jpg", border: 0, :size => '260x180'), parkinglot_path
+:javascript
+	console.log("javascript");
+	var x = 0;
+	var y = 0;
+	x = 5;
+	y = 10;
+	console.log(x + y);
+	console.log(x * y);
+
+=link_to image_tag("ParkingMap1.jpg", border: 0, :size => '520x360'), parkinglot_path
