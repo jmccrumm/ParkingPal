@@ -1,13 +1,13 @@
--#=link_to image_tag("parkinglot.jpg", border: 0, :size => '520x360'), parkingspot_path
 
 %table#parkingspots
 	%thead
 	%tbody
 		- lot = @parkinglot
-		- @parkingspots.each do |spot|
-			%td= spot
-			- if spot.id % lot.width == 0
-				%tr
+		- @parkingspots.each_slice(lot.width) do |row|
+			%tr
+				- row.each do |spot|
+					%td= spot.status
+
 			
 = link_to 'Back', root_path
 

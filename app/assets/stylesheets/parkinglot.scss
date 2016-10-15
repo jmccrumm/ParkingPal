@@ -1,3 +1,22 @@
 // Place all the styles related to the parkinglot controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	//border-spacing: 0px 0px;
+
+}
+
+td {
+	border-right: 4px solid yellow;
+	border-left: 4px solid yellow;
+}
+
+
+tr:nth-child(odd) {
+	border-bottom: 4px solid yellow;
+	border-spacing: 0px 20px;
+}
