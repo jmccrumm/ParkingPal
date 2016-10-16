@@ -4,42 +4,43 @@
 
 table {
 	table-layout: fixed;
-	width: 100%;
+	width: 65%;
 	border-collapse: collapse;
 	//border-spacing: 0px 0px;
 
 }
 
+
 td {
-	border-right: 4px solid white;
-	border-left: 4px solid white;
+	border-right: 12px solid grey;
+	border-left: 12px solid grey;
 	height: 75px;
 }
 
 td.open {
-	background-color: rgb(20, 178, 17);
-	border-right: 4px solid white;
-	border-left: 4px solid white;
+	background-color: rgb(102, 255, 51);
+	border-right: 12px solid rgb(47,33,56);
+	border-left: 12px solid rgb(47,33,56);
 	height: 75px;
 }
 
 td.reserved {
-	background-color: rgb(93, 151, 244);
-	border-right: 4px solid white;
-	border-left: 4px solid white;
+	background-color: rgb(255, 255, 77);
+	border-right: 12px solid rgb(47,33,56);
+	border-left: 12px solid rgb(47,33,56);
 	height: 75px;
 }
 
 td.taken {
-	background-color: rgb(196, 15, 15);
-	border-right: 4px solid white;
-	border-left: 4px solid white;
+	background-color: rgb(255,55,15);
+	border-right: 12px solid rgb(47,33,56);
+	border-left: 12px solid rgb(47,33,56);
 	height: 75px;
 }
 
 
 tr:nth-child(odd) {
-	border-bottom: 4px solid white;
+	border-bottom: 12px solid rgb(47,33,56);
 	//border-top: 20px solid transparent;
 }
 

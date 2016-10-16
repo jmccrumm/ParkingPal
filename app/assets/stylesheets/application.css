@@ -36,15 +36,17 @@
       }
 
       body{
-					background-color: white;
+					background-color: rgb(217,204,224);
           /*background-color: darkslategrey;*/
           /*width: 415px;*/
       }
 
       h1 {
           display: inline;
-          color: black;
+          color: white;
           vertical-align: middle;
+          padding: 12px;
+
       }
 
       a:link {
@@ -73,7 +75,7 @@
       }
 
       .container{
-          background-color: grey;
+          background-color: rgb(47,33,56);
           color: white;
           height: 75px;
           padding-top: 20px;
