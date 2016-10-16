@@ -13,7 +13,7 @@
 	.col-1.menu
 		%div{:style => "display: inline"}
 		%div
-			%a{:href => parkinglot_path}
+			%a{:href => map_path}
 				%i.material-icons{:style => "background-color: aqua; font-size: 3em", :title => "Map"} map
 			%a{:href => user_path}
 				%i.material-icons{:style => "background-color: magenta; font-size: 3em", :title => "Account"} account_circle
