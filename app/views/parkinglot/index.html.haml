@@ -3,10 +3,20 @@
 	%thead
 	%tbody
 		- lot = @parkinglot
+		- count = 0
 		- @parkingspots.each_slice(lot.width) do |row|
 			%tr
 				- row.each do |spot|
-					%td= spot.status
+					- count = count + 1
+					- if count % (2*lot.width) == 0
+						%td= spot.status
+						%tr
+						- for i in 0...lot.width
+							%td
+					- else
+						%td= spot.status
+					
+
 
 			
 = link_to 'Back', root_path
