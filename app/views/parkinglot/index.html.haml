@@ -13,17 +13,25 @@
 	%thead
 	%tbody
 		- lot = @parkinglot
+		- count = 0
 		- @parkingspots.each_slice(lot.width) do |row|
 			%tr
 				- row.each do |spot|
-					%td= link_to spot.status, "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+					- count = count + 1
+					- if count % (2*lot.width) == 0
+						%td= link_to spot.status, "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+						%tr
+						- for i in 0...lot.width
+							%td
+					- else
+						%td= link_to spot.status, "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+					
 
 %div#div1
 	%p#spotID
 	%p#status
 	%p#spotType
 	%p#occupying			
-
 
 = link_to 'Back', root_path
 
