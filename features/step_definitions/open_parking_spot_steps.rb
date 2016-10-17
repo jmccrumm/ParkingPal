@@ -1,6 +1,6 @@
 Given(/^I am on the parkinglot page$/) do
   #pending # Write code here that turns the phrase above into concrete actions
-	visit parkinglot_path
+	parkinglot_path
 end
 
 
