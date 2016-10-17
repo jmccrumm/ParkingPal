@@ -44,12 +44,15 @@ td.taken {
 	height: 75px;
 }
 
-
+// for middle horizontal line between 2 rows of spaces
 tr:nth-child(odd) {
-	border-bottom: 12px solid rgb(47,33,56);
+	td {
+		border-bottom: 12px solid rgb(47,33,56);
+	}
 	//border-top: 20px solid transparent;
 }
 
+// for empty rows between pairs of spaces
 tr:nth-child(4n) {
 	border: 0px solid transparent;
 	td {
@@ -58,12 +61,8 @@ tr:nth-child(4n) {
 	}
 }
 
-tr:nth-child(3n) {
-	border: 0px solid transparent;
-	border-bottom: 0px solid transparent;
-}
-
-tr:nth-child(7n) {
+// get rid of horizontal lines where there shouldn't be any
+tr:nth-child(4n - 1) {
 	border: 0px solid transparent;
 	border-bottom: 0px solid transparent;
 }
