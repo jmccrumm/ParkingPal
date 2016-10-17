@@ -1,0 +1,8 @@
+Feature: Parking Lot
+
+Scenario: Viewing the list of parking spots within a lot
+Given The grid of parking spots are being shown
+When I click on a particular "spot"
+When I takes a schreenshot with file name "Screen1"
+Then I should see available options for that "spot"
+When I takes a schreenshot with file name "Screen2"
