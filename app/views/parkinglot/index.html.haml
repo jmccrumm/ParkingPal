@@ -18,27 +18,31 @@
 			%tr
 				- row.each do |spot|
 					- count = count + 1
+					- if spot.occupying != nil
+						- u = @uname.values_at(spot.occupying)[0]
+					- else
+						- u = ""
 					- if count % (2*lot.width) == 0
 						-if spot.status=="open"
-							%td.open= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+							%td.open= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
 						-elsif spot.status=="reserved"
-							%td.reserved= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+							%td.reserved= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
 						-elsif spot.status=="taken"
-							%td.taken= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+							%td.taken= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
 						-else
-							%td= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+							%td= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
 						%tr
 						- for i in 0...lot.width
 							%td
 					- else
 						-if spot.status=="open"
-							%td.open= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+							%td.open= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
 						-elsif spot.status=="reserved"
-							%td.reserved= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+							%td.reserved= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
 						-elsif spot.status=="taken"
-							%td.taken= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+							%td.taken= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
 						-else
-							%td= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{spot.occupying}\")"
+							%td= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
 					
 
 %div#div1

@@ -5,6 +5,7 @@ class ParkinglotController < ApplicationController
 		@users = User.all
 		@uname = []
 		@users.each do |u|
+			puts u
 			@uname << u.name
 		end
 	end

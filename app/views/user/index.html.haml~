@@ -1,4 +1,8 @@
 //=image_tag("web_service_user.png", border: 0, :size => '520x360')
 
 - @users.each do |u|
-	=u.name
+	Name: 
+	=u.name 
+	, license plate
+	=u.LPN
+	%br
