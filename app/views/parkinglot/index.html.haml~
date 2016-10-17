@@ -1,11 +1,21 @@
 :javascript
 	function spot(id, stat, type, occ){
-		console.log("SPOTting");
-		console.log("Width: " + "#{@parkinglot.width}");
-		document.getElementById("spotID").textContent=id;
 		document.getElementById("status").textContent=stat;
 		document.getElementById("spotType").textContent=type;
 		document.getElementById("occupying").textContent=occ;
+		if(stat == "reserved"){
+			document.getElementById("reserve").hidden=true;
+			document.getElementById("take").hidden=false;
+		}
+		if(stat == "open"){
+			document.getElementById("reserve").hidden=false;
+			document.getElementById("take").hidden=false;
+		}
+
+		if(stat == "taken"){
+			document.getElementById("reserve").hidden=true;
+			document.getElementById("take").hidden=true;
+		}
 		event.preventDefault();
 	}
 
@@ -19,7 +29,7 @@
 				- row.each do |spot|
 					- count = count + 1
 					- if spot.occupying != nil
-						- u = @uname.values_at(spot.occupying).name
+						- u = @uname.values_at(spot.occupying)[0]
 					- else
 						- u = ""
 					- if count % (2*lot.width) == 0
@@ -49,7 +59,9 @@
 	%p#spotID
 	%p#status
 	%p#spotType
-	%p#occupying			
+	%p#occupying	
+	=button_to "Reserve", {}, {:id=>"reserve", :hidden=>true}
+	=button_to "Take", {}, {:id=>"take", :hidden=>true}
 
 = link_to 'Back', root_path
 
