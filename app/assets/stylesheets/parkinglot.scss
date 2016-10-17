@@ -6,8 +6,6 @@ table {
 	table-layout: fixed;
 	width: 65%;
 	border-collapse: collapse;
-	//border-spacing: 0px 0px;
-
 }
 
 
@@ -49,7 +47,6 @@ tr:nth-child(odd) {
 	td {
 		border-bottom: 12px solid rgb(47,33,56);
 	}
-	//border-top: 20px solid transparent;
 }
 
 // for empty rows between pairs of spaces
