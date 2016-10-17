@@ -1,6 +1,6 @@
 //=image_tag("stats.jpg", border: 0, :size => '520x360')
 
-%p total parking spots: #{@totalspots}
-%p total parking spots: #{@available}
-%p total parking spots: #{@reserved}
-%p total parking spots: #{@taken}
+%p Total parking spots: #{@totalspots}
+%p Available spots: #{@available}
+%p Reserved spots: #{@reserved}
+%p Taken spots: #{@taken}
