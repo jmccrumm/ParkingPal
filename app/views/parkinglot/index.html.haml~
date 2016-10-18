@@ -18,7 +18,7 @@
 		}
 		event.preventDefault();
 	}
-
+% image_tag("spotlight.png", border: 0, :size => '520x360')
 %table#parkingspots
 	%thead
 	%tbody
