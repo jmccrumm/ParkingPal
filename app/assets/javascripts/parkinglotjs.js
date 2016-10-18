@@ -1,17 +1,21 @@
-function spot(val){
-		console.log("SPOTting");
-		console.log("Width: " + val);
+function spot(){
+		//console.log("SPOTting");
+		//console.log("Width: " + val);
+		$(SpotPopup.setup);
 }
 
 var SpotPopup = {
 	setup: function() {
 		var popupDiv = $('<div id="spotInfo"></div>');
 		popupDiv.hide().appendTo($('body'));
-		$(document).on('click', '#spots a', SpotPopup.getSpotInfo);
+		$(document).on('click', '#spot a', SpotPopup.getSpotInfo);
 	}
 	,getSpotInfo: function() {
+		//var spot =  "<%= @spot %>";
 		$.ajax({type: 'GET',
+				//url: "<%= Rails.application.routes.url_helpers.parkingspot_path(spot) %>",
 				url: $(this).attr('href'),
+				timeout: 5000,
 				success: SpotPopup.showSpotInfo,
 				error: function(xhrObj, textStatus, exception) {alert('Error!');}
 	});
@@ -28,4 +32,4 @@ var SpotPopup = {
 		return(false);
 	}
 };
-$(SpotPopup.setup);
+//$(SpotPopup.setup);

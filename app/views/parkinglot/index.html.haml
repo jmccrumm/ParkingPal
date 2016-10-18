@@ -1,23 +1,34 @@
-:javascript
-	function spot(id, stat, type, occ){
-		document.getElementById("status").textContent=stat;
-		document.getElementById("spotType").textContent=type;
-		document.getElementById("occupying").textContent=occ;
-		if(stat == "reserved"){
-			document.getElementById("reserve").hidden=true;
-			document.getElementById("take").hidden=false;
-		}
-		if(stat == "open"){
-			document.getElementById("reserve").hidden=false;
-			document.getElementById("take").hidden=false;
+	:javascript
+		function spot(id, stat, type, occ){
+			document.getElementById("status").textContent=stat;
+			document.getElementById("spotType").textContent=type;
+			document.getElementById("occupying").textContent=occ;
+			if(stat == "reserved"){
+				document.getElementById("reserve").hidden=true;
+				document.getElementById("take").hidden=false;
+			}
+			if(stat == "open"){
+				document.getElementById("reserve").hidden=false;
+				document.getElementById("take").hidden=false;
+			}
+
+			if(stat == "taken"){
+				document.getElementById("reserve").hidden=true;
+				document.getElementById("take").hidden=true;
+			}
+			event.preventDefault();
 		}
 
-		if(stat == "taken"){
-			document.getElementById("reserve").hidden=true;
-			document.getElementById("take").hidden=true;
-		}
-		event.preventDefault();
-	}
+/%script{type: "text/javascript", src: "javascripts/parkinglotjs.js"}
+= image_tag("spotlight.png", border: 0, :size => '150x260')
+
+<strong><p align= "right"> Taken </p></strong>
+&nbsp; 
+&nbsp; 
+<strong><p align= "right"> Reserved </p> &nbsp; </strong>
+&nbsp; 
+
+<strong> <p align= "right"> Open </p> </strong>
 
 %table#parkingspots
 	%thead
@@ -29,30 +40,30 @@
 				- row.each do |spot|
 					- count = count + 1
 					- if spot.occupying != nil
-						- u = @uname.values_at(spot.occupying)[0]
+						- @user = @uname.values_at(spot.occupying)[0]
 					- else
-						- u = ""
+						- @user = ""
 					- if count % (2*lot.width) == 0
 						-if spot.status=="open"
-							%td.open= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
+							%td.open#spot= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()"
 						-elsif spot.status=="reserved"
-							%td.reserved= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
+							%td.reserved#spot= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()"
 						-elsif spot.status=="taken"
-							%td.taken= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
+							%td.taken#spot= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()"
 						-else
-							%td= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
+							%td= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()"
 						%tr
 						- for i in 0...lot.width
 							%td
 					- else
 						-if spot.status=="open"
-							%td.open= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
+							%td.open#spot= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()"
 						-elsif spot.status=="reserved"
-							%td.reserved= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
+							%td.reserved#spot= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()"
 						-elsif spot.status=="taken"
-							%td.taken= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
+							%td.taken#spot= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()"
 						-else
-							%td= link_to "", "", :onclick=>"spot(\"#{spot.id}\", \"#{spot.status}\", \"#{spot.spot_type}\", \"#{u}\")"
+							%td= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()"
 					
 
 %div#div1
