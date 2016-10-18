@@ -8,12 +8,16 @@ table {
 	border-collapse: collapse;
 }
 
-
 td {
 	border-right: 12px solid grey;
 	border-left: 12px solid grey;
 	height: 75px;
 }
+
+img{
+	float: right; 
+	margin: 0px 0px 15px 20px;
+} 
 
 td a {
 	display: block;
