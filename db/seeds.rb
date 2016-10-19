@@ -23,7 +23,7 @@ parkingspots = [{parkinglot_id: '1', spot_type: 'handicap', status: 'open'}, {pa
 	{parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {parkinglot_id: '1', spot_type: 'normal', status: 'open'}, {spot_type: 'normal', status: 'open'}
 ]
 
-User.create!([{
+users = [{
 	name: "Mike Spaceman",
 	LPN: "111 xxx" 
 	},
@@ -84,7 +84,7 @@ User.create!([{
 	{
 		name: "Vicky Lee",
 		LPN: "mop 222"
-	}])
+	}]
 
 @mainlot = Parkinglot.find(1)
 # create spots
@@ -94,4 +94,8 @@ end
 # populate into main lot
 parkingspots.each do |spot|
 	@mainlot.parkingspots.create!(spot)
+end
+# create users
+users.each do |user|
+	User.create!(user)
 end

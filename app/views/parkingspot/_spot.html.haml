@@ -2,6 +2,10 @@
 %p= @spot.id
 %p= @spot.status
 %p= @spot.spot_type
-//%p= @user.name
+-if @spot.occupying == nil
+	%p= ''
+-else
+	%p= User.find(@spot.occupying).name
+
 
 = link_to 'Close', '', {id: 'closeLink'}
