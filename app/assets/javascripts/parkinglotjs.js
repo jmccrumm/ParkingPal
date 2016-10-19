@@ -1,6 +1,4 @@
 function spot(){
-		//console.log("SPOTting");
-		//console.log("Width: " + val);
 		$(SpotPopup.setup);
 }
 
@@ -11,9 +9,7 @@ var SpotPopup = {
 		$(document).on('click', '#spot a', SpotPopup.getSpotInfo);
 	}
 	,getSpotInfo: function() {
-		//var spot =  "<%= @spot %>";
 		$.ajax({type: 'GET',
-				//url: "<%= Rails.application.routes.url_helpers.parkingspot_path(spot) %>",
 				url: $(this).attr('href'),
 				timeout: 5000,
 				success: SpotPopup.showSpotInfo,
@@ -32,4 +28,3 @@ var SpotPopup = {
 		return(false);
 	}
 };
-//$(SpotPopup.setup);

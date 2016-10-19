@@ -1,5 +1,4 @@
 
-/%script{type: "text/javascript", src: "javascripts/parkinglotjs.js"}
 = image_tag("spotlight.png", border: 0, :size => '150x260')
 
 <strong><p align= "right"> Taken </p></strong>
@@ -45,14 +44,5 @@
 						-else
 							%td= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()"
 					
-
-/%div#div1
-/	%p#spotID
-/	%p#status
-/	%p#spotType
-/	%p#occupying	
-/	=button_to "Reserve", {}, {:id=>"reserve", :hidden=>true}
-/	=button_to "Take", {}, {:id=>"take", :hidden=>true}
-
 = link_to 'Back', root_path
 
