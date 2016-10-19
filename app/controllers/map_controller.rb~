@@ -2,10 +2,10 @@ class MapController < ApplicationController
 	def index
 		if params[:reason] != nil
 			@reason = params[:reason][:r]
-			@id = params[:reason][:id]
-			@name = params[:reason][:name]
-			@status = params[:reason][:status]
-			@type = params[:reason][:type]
+			@id = params[:id]
+			@name = params[:name]
+			@status = params[:status]
+			@type = params[:type]
 		end
 
 		if @reason == "s"

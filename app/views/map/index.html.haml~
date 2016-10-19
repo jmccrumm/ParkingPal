@@ -1,10 +1,51 @@
-:javascript
-	console.log("javascript");
-	var x = 0;
-	var y = 0;
-	x = 5;
-	y = 10;
-	console.log(x + y);
-	console.log(x * y);
 
-=link_to image_tag("ParkingMap1.jpg", border: 0, :size => '520x360'), parkinglot_path
+=link_to "", {:controller => "map", :action => "index", :reason => "show"}
+
+%table#parkingspots
+	%thead
+	%tbody
+		- lot = @parkinglot
+		- count = 0
+		- @parkingspots.each_slice(lot.width) do |row|
+			%tr
+				- row.each do |spot|
+					- count = count + 1
+					- if spot.occupying != nil
+						- @user = @uname.values_at(spot.occupying)[0]
+					- else
+						- @user = ""
+					- parameters = {:reason => {r: "s", name: @user, id: spot.id, status: spot.status, type: spot.spot_type}}
+					- if count % (2*lot.width) == 0
+						-if spot.status=="open"
+							%td.open#spot= link_to "", map_path(parameters)
+						-elsif spot.status=="reserved"
+							%td.reserved#spot= link_to "", map_path(parameters)
+						-elsif spot.status=="taken"
+							%td.taken#spot= link_to "", map_path(parameters)
+						-else
+							%td= link_to "", map_path(parameters)
+						%tr
+						- for i in 0...lot.width
+							%td
+					- else
+						-if spot.status=="open"
+							%td.open#spot= link_to "", map_path(parameters)
+						-elsif spot.status=="reserved"
+							%td.reserved#spot= link_to "", map_path(parameters)
+						-elsif spot.status=="taken"
+							%td.taken#spot= link_to "", map_path(parameters)
+						-else
+							%td= link_to "", map_path(parameters)
+
+%div{:id=>"spot", :class=>@overlay}
+	%div{:class=>"popup"}
+		=link_to raw('&times'), {:controller => "map", :action => "index", :reason => ''}, :class=>"close"
+		//raw allows html codes
+		=@id 
+		=@name 
+		=@status
+		=@type
+
+
+
+

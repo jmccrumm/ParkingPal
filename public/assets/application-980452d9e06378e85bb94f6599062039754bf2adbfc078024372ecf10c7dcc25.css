@@ -1,0 +1,244 @@
+/* line 5, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.overlayHidden {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* line 16, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.overlayVisible {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 27, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.popup {
+  margin: 70px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 3s ease-in-out;
+}
+
+/* line 41, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 100ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decorations: none;
+  color: #333;
+}
+
+/* line 52, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.popup .close:hover {
+  color: red;
+}
+
+/* line 56, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+/* line 5, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+table {
+  table-layout: fixed;
+  width: 65%;
+  border-collapse: collapse;
+}
+
+/* line 11, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+td {
+  border-right: 12px solid grey;
+  border-left: 12px solid grey;
+  height: 75px;
+}
+
+/* line 17, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+img {
+  float: right;
+  margin: 0px 0px 15px 20px;
+}
+
+/* line 22, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+td a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 28, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+td.open {
+  background-color: #66ff33;
+  border-right: 12px solid #2f2138;
+  border-left: 12px solid #2f2138;
+  height: 75px;
+}
+
+/* line 35, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+td.reserved {
+  background-color: #ffff4d;
+  border-right: 12px solid #2f2138;
+  border-left: 12px solid #2f2138;
+  height: 75px;
+}
+
+/* line 42, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+td.taken {
+  background-color: #ff370f;
+  border-right: 12px solid #2f2138;
+  border-left: 12px solid #2f2138;
+  height: 75px;
+}
+
+/* line 51, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+tr:nth-child(odd) td {
+  border-bottom: 12px solid #2f2138;
+}
+
+/* line 57, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+tr:nth-child(4n) {
+  border: 0px solid transparent;
+}
+/* line 59, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+tr:nth-child(4n) td {
+  border-right: 0px solid transparent;
+  border-left: 0px solid transparent;
+}
+
+/* line 66, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+tr:nth-child(4n - 1) {
+  border: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+}
+/* line 5, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkingspot.scss */
+#spotInfo {
+  padding: 2ex;
+  position: absolute;
+  border: 2px double grey;
+  background: grey;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+* {
+          box-sizing: border-box;
+      }
+
+      .row::after {
+          content: "";
+          clear: both;
+          display: block;
+      }
+
+      [class*="col-"] {
+          padding: 15px;
+      }
+
+      .col-1 {
+          width: 100%;
+      }
+
+
+      html {
+          font-family: "Calibri", sans-serif;
+      }
+
+      body{
+					background-color: rgb(217,204,224);
+          /*background-color: darkslategrey;*/
+          /*width: 415px;*/
+      }
+
+      h1 {
+          display: inline;
+          color: #24fbb6;
+          vertical-align: middle;
+          padding: 12px;
+
+      }
+
+      a:link {
+      	color: black;
+      	text-decoration: none;
+      }
+
+      a:visited {
+      	color: black;
+      }
+
+      a:hover {
+      	color: dimgrey;
+      }
+
+      .menu i {
+          padding: 8px;
+          margin: 7px;
+          box-shadow: 0 5px 7px black, 0 1px 2px black;
+          height: 60px;
+          width: 60px;
+          font-size: 18px;
+          text-align: center;
+          vertical-align: middle;
+          cursor: pointer;
+      }
+
+      .container{
+          background-color: rgb(47,33,56);
+          color: white;
+          height: 75px;
+          padding-top: 20px;
+          padding-left: 20px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      }
+
+      .container li{
+          padding: 10px;
+          color: white;
+          box-shadow: 0 1px 5px rgb(217,204,224), 0 1px 2px rgb(217,204,224);
+          width: 50px;
+          display: inline;
+          margin: 7px;
+          font-size: 18px;
+          text-align: center;
+          cursor: pointer;
+          font-weight: bold;
+      }
+          .container li:hover {
+                 background-color: rgb(217,204,224);
+              }
+
+      .container i{
+          float: right;
+          margin-right: 15px;
+          margin-top: -10px;
+          font-size: 25px;
+      }
