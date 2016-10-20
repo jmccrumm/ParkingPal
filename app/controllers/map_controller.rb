@@ -1,15 +1,19 @@
 class MapController < ApplicationController
 	def index
-		if params[:reason] != nil
-			@reason = params[:reason][:r]
-			@id = params[:reason][:id]
-			@name = params[:reason][:name]
-			@status = params[:reason][:status]
-			@type = params[:reason][:type]
-		end
+		@spotID = params[:postr].to_i
 
-		if @reason == "s"
-			@overlay = "overlayVisible"
+		if @spotID > 0 
+			if Parkingspot.exists?(id: @spotID)
+				@overlay = "overlayVisible"
+				@spot = Parkingspot.find(@spotID)
+				if @spot.occupying != nil
+					@name = User.find(@spot.occupying).name
+				else
+					@name = ''
+				end
+				@status = @spot.status
+				@type = @spot.spot_type
+			end
 		else 
 			@overlay = "overlayHidden"
 		end
@@ -17,10 +21,6 @@ class MapController < ApplicationController
 		@parkingspots = Parkingspot.all
 		@parkinglot = Parkinglot.find(1)
 		@users = User.all
-		@uname = []
-		@users.each do |u|
-			@uname << u.name
-		end
 
 	end
 

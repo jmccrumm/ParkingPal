@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
 	get 'user', to: 'user#index'
 
-	get 'map', to: 'map#index'
-	get 'map/:reason', to: 'map#index'
+	"resources :map"
+	get 'map' => 'map#index'
+	get 'map/:postr' => 'map#index', as: 'showspot'
 
 	get 'message', to: 'message#index'
 	get 'message/display', to: 'message#display'

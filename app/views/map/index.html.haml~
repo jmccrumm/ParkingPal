@@ -10,29 +10,22 @@
 			%tr
 				- row.each do |spot|
 					- count = count + 1
-					- if spot.occupying != nil
-						- @user = @uname.values_at(spot.occupying)[0]
-					- else
-						- @user = ""
-					- parameters = {:reason => {r: "s", name: @user, id: spot.id, status: spot.status, type: spot.spot_type}}
-					- status = spot.status
 					- if count % (2*lot.width) == 0
-						%td{:class=>spot.status, :id=>spot}= link_to "", map_path(parameters)
+						%td{:class=>spot.status, :id=>spot}= link_to "", showspot_path(postr: spot.id), postr: spot.id
 						%tr
 						- for i in 0...lot.width
 							%td
 					- else
-						%td{:class=>spot.status, :id=>spot}= link_to "", map_path(parameters)
+						%td{:class=>spot.status, :id=>spot}= link_to "", showspot_path(postr: spot.id), postr: spot.id
+
 
 %div{:id=>"spot", :class=>@overlay}
 	%div{:class=>"popup"}
-		=link_to raw('&times'), {:controller => "map", :action => "index", :reason => ''}, :class=>"close"
+		=link_to raw('&times'), {:controller => "map", :action => "index", :postr => ''}, :class=>"close"
 		//raw allows html codes
-		%p=@id 
+		%p=@spotID 
 		%p=@name 
 		%p=@status
 		%p=@type
-
-
 
 
