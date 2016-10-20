@@ -7,47 +7,31 @@
     <% @parkingspots.each_slice(lot.width) do |row| %>
       <tr>
         <% row.each do |spot| %>
+          <% if  spot.status=="taken" %>
+              <% hCapImg = image_tag("car.png", border: 0, :size => '60x60', align: 'center') %> 
+          <% elsif spot.spot_type=="handicap" && spot.status=="reserved" %>
+              <% hCapImg = image_tag("reserved-handi.png", border: 0, :size => '67x67') %>
+          <% elsif  spot.status=="reserved" %>
+              <% hCapImg = image_tag("reserved.gif", border: 0, :size => '67x67') %>
+          <% elsif  spot.spot_type=="handicap" %>
+              <% hCapImg = image_tag("handicap.gif", border: 0, :size => '67x67') %>   
+          
+          <% else %>
+              <% hCapImg = image_tag("Transparency500.png", :size => '0x0')%>
+          <%end%>
           <% count = count + 1 %>
           <% if count % (2*lot.width) == 0 %>
-            <% if spot.status=="open" %>
-              <td class="open" id="spot">
-                <%= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
+              <td class=spot.status id="spot">
+                <%= link_to hCapImg, parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
               </td>
-            <% elsif spot.status=="reserved" %>
-              <td class="reserved" id="spot">
-                <%= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
-              </td>
-            <% elsif spot.status=="taken" %>
-              <td class="taken" id="spot">
-                <%= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
-              </td>
-            <% else %>
-              <td>
-                <%= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
-              </td>
-            <% end %>
             <tr></tr>
             <% for i in 0...lot.width %>
               <td></td>
             <% end %>
           <% else %>
-            <% if spot.status=="open" %>
-              <td class="open" id="spot">
-                <%= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
+              <td class=spot.status id="spot">
+                <%= link_to hCapImg, parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
               </td>
-            <% elsif spot.status=="reserved" %>
-              <td class="reserved" id="spot">
-                <%= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
-              </td>
-            <% elsif spot.status=="taken" %>
-              <td class="taken" id="spot">
-                <%= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
-              </td>
-            <% else %>
-              <td>
-                <%= link_to "", parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
-              </td>
-            <% end %>
           <% end %>
         <% end %>
       </tr>
