@@ -8,13 +8,13 @@
       <tr>
         <% row.each do |spot| %>
           <% if  spot.status=="taken" %>
-              <% hCapImg = image_tag("car.png", border: 0, :size => '60x60', align: 'center') %> 
+              <% hCapImg = image_tag("car.png", border: 0, width: "95%", height: "95%") %> 
           <% elsif spot.spot_type=="handicap" && spot.status=="reserved" %>
-              <% hCapImg = image_tag("reserved-handi.png", border: 0, :size => '67x67') %>
+              <% hCapImg = image_tag("reserved-handi.png", border: 0, width: "100%", height: "100%") %>
           <% elsif  spot.status=="reserved" %>
-              <% hCapImg = image_tag("reserved.gif", border: 0, :size => '67x67') %>
+              <% hCapImg = image_tag("reserved.gif", border: 0, width: "95%", height: "95%") %>
           <% elsif  spot.spot_type=="handicap" %>
-              <% hCapImg = image_tag("handicap.gif", border: 0, :size => '67x67') %>   
+              <% hCapImg = image_tag("handicap.gif", border: 0, width: "95%", height: "95%") %>   
           
           <% else %>
               <% hCapImg = image_tag("Transparency500.png", :size => '0x0')%>
