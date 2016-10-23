@@ -25,9 +25,6 @@
 
 %br
 
-- if user_signed_in?
-	= link_to("logout", destroy_user_session_path, :method => :delete)
-
 - if current_page?(message_path) || current_page?(message_display_path) || current_page?(message_new_path)
 	= link_to("Inbox", message_path)
 	= link_to("Link to test message", message_display_path)
@@ -47,3 +44,5 @@
 	= link_to("< Back to Schedule", schedule_path)
 	%br
 
+- if user_signed_in?
+	= link_to("logout", destroy_user_session_path, :method => :delete)
