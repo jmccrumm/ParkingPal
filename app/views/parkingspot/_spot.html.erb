@@ -7,11 +7,7 @@
 <p>
 	<%= "Status: #{@spot.status}" %>
 </p>
-<% if @spot.occupying == nil  %>
-	<p>
-		<%= '' %>
-	</p>
-<% else %>
+<% if @spot.occupying != nil  %>
 	<p>
 		<%= image_tag("profile.png", size: '15x15') %>
 		<%= User.find(@spot.occupying).name %>
