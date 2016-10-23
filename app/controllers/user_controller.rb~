@@ -1,6 +1,5 @@
 class UserController < ApplicationController
-	protect_from_forgery prepend: true
-	before_action :authenticate_user! #check if the user is logged in
+
 	#to verify user is signed in: user_signed_in?
 	#for the current user, the helper is available: current_user
 	#can access the session of the this scope: user_session
