@@ -1,12 +1,20 @@
-Given(/^The parking "([^"]*)" is reserved \(yellow\)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^The parking spot is reserved$/) do
+	Rails.application.load_seed
+	@spots = Parkingspot.where(status: 'reserved')
 end
 
-When(/^I click 'take "([^"]*)"'$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I am not the user currently holding the spot$/) do
+	@user = User.create!(name: 'fake_user', LPN: '123 xyz')
 end
 
-Then(/^I should get a message telling me the spot is reserved and will be for __ more minutes$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I view the options for that spot$/) do
+	@spots.each do |spot|
+		visit parkingspot_path(spot.id)
+	end
 end
+
+Then(/^I should not be able to take the spot$/) do
+	expect(page).not_to have_content('Take Spot')
+end
+
 

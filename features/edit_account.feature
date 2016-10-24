@@ -1,10 +1,9 @@
-Feature: Edit User Account
+Feature: Edit User Info
 
-Scenario: Displaying details of the user that is logged in
-Given I am on the home page
-When I click the account icon
-Then I should see details of the user account as well as a button to edit info
-When I click edit info
+Scenario: Changing the name of the user logged in
+
+When I am logged in as "Mike Spaceman" 
+And I click edit info
 Then I should see a form to change account information and a submit button
 When I change my name to "Average Joe" 
 And I click submit

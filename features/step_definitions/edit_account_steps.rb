@@ -1,16 +1,8 @@
-Given(/^I am on the home page$/) do
-  visit root_path
-end
-
-When(/^I click the account icon$/) do
-  visit account_path
-end
-
-Then(/^I should see details of the user account as well as a button to edit info$/) do
+When(/^I am logged in as "([^"]*)"$/) do |user|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^I click edit info$/) do
+Then(/^I click edit info$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
