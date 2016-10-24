@@ -1,6 +1,5 @@
 Given(/^The grid of parking spots are being shown$/) do
 	Rails.application.load_seed
-	# rake db:test:load
 	@mainlot = Parkinglot.find(1)
 	visit parkinglot_path(@mainlot)
 end
