@@ -4,4 +4,4 @@ Scenario: After I register, my name and license plate should be added to a list 
 Given I am on the register page
 When I enter a name and license plate and sign up
 Then I should be sent to an account page
-That displays the database of users including me
+And It should display the database of users including me
