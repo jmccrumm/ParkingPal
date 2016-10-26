@@ -27,8 +27,8 @@
 	</div>
 
 	<div class="field">
-		<%= f.label "License Plate Number" %><br>
-		<%= f.text_field :LPN, autocomplete: "off", :id => 'LPN' %>
+		<%= f.label "License Plate Number, (LPN MUST be 6 to 7 characters)" %><br>
+		<%= f.text_field :LPN, autocomplete: "off", required: true, pattern: ".{6,7}", :id => 'LPN'  %>
 	</div>
 
   <div class="actions">
