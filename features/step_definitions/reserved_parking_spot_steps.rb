@@ -1,5 +1,4 @@
 Given(/^The parking spot is reserved$/) do
-	Rails.application.load_seed
 	@spots = Parkingspot.where(status: 'reserved')
 end
 

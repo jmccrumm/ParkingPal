@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, :id => 'email' %>
   </div>
 
   <div class="field">
@@ -13,22 +13,22 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", :id => 'password' %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :id => 'password_confirmation' %>
   </div>
 
 	<div class="field">
 		<%= f.label "Name" %><br>
-		<%= f.text_field :name, autocomplete: "off" %>
+		<%= f.text_field :name, autocomplete: "off", :id => 'name' %>
 	</div>
 
 	<div class="field">
 		<%= f.label "License Plate Number" %><br>
-		<%= f.text_field :LPN, autocomplete: "off" %>
+		<%= f.text_field :LPN, autocomplete: "off", :id => 'LPN' %>
 	</div>
 
   <div class="actions">
