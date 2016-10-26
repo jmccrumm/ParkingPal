@@ -1,7 +1,5 @@
 //=image_tag("web_service_user.png", border: 0, :size => '520x360')
 
-%br
-
 Email: 
 =@users.email 
 %br
