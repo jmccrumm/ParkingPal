@@ -6,9 +6,25 @@
 	padding: 2ex;
 	position: absolute;
 	border: 2px double black;
-	background: grey;
+	
+	background: radial-gradient(#B0C4DE, #5F9EA0, #2F4F4F); 
+}
 
-	p{
-		font-family: "Calibri", sans-serif;
-	}
+p {
+	font-family: Georgia, serif;
+	font-variant: small-caps;
+	font-weight: 900;
+	align: center;
+}
+
+
+p.open {
+
+	color: green;
+}
+p.taken {
+	color: red;
+}
+p.reserved {
+	color: yellow;
 }

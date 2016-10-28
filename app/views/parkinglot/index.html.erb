@@ -21,7 +21,7 @@
           <%end%>
           <% count = count + 1 %>
           <% if count % (2*lot.width) == 0 %>
-              <td class=spot.status id="spot">
+              <td class="<%= spot.status %>" id="spot">
                 <%= link_to hCapImg, parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
               </td>
             <tr></tr>
@@ -29,7 +29,7 @@
               <td></td>
             <% end %>
           <% else %>
-              <td class=spot.status id="spot">
+              <td class="<%= spot.status %>" id="spot">
                 <%= link_to hCapImg, parkingspot_path(id: spot.id), id: spot.id, :onclick=>"spot()" %>
               </td>
           <% end %>

@@ -20,27 +20,6 @@ td a {
 	height: 100%;
 }
 
-td.open {
-	background-color: rgb(102, 255, 51);
-	border-right: 12px solid rgb(47,33,56);
-	border-left: 12px solid rgb(47,33,56);
-	height: 75px;
-}
-
-td.reserved {
-	background-color: rgb(255, 255, 77);
-	border-right: 12px solid rgb(47,33,56);
-	border-left: 12px solid rgb(47,33,56);
-	height: 75px;
-}
-
-td.taken {
-	background-color: rgb(255,55,15);
-	border-right: 12px solid rgb(47,33,56);
-	border-left: 12px solid rgb(47,33,56);
-	height: 75px;
-}
-
 // for middle horizontal line between 2 rows of spaces
 tr:nth-child(odd) {
 	td {
