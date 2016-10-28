@@ -17,7 +17,7 @@ RSpec.describe Parkingspot, type: :model do
   		let(:user) {FactoryGirl.create :user}
 
   		it 'recognize logged in user has the spot' do
-  			expect(spot.occupying).to equal(user.id)
+  			expect(spot.occupying).to eq(user.id)
   		end
   	end
   end
@@ -33,7 +33,6 @@ RSpec.describe Parkingspot, type: :model do
 
 		end
 	end
-
 
   end
 
