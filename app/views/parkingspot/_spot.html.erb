@@ -1,11 +1,12 @@
 <div align="center">
-<%# display handicap image if needed%>
-<p>
-	<%= "Spot ##{@spot.id}" %>
-	<% if @spot.spot_type == 'handicap' %>
-		<%= image_tag("handicap.gif", border: 0, :size => '35x35', align: 'right') %>
-	<% end %>
-</p>
+<%# display handicap image if needed %>
+<% if @spot.spot_type == 'handicap' %>
+	<%= image_tag("handicap.gif", border: 0, :size => '35x35', align: 'left') %>
+	<br>
+<% end %>
+
+<%# display spot # %>
+<p><%= "Spot ##{@spot.id}" %></p>
 
 <%# display status of spot (open, taken, reserved) %>
 <p class="<%= @spot.status %>" id="spot"><%= @spot.status.upcase %></p>
@@ -15,7 +16,7 @@
 	<p>
 		<%= image_tag("profile.png", size: '15x15') %>
 		<%= User.find(@spot.occupying).name %>
-		<%= link_to image_tag("message.png", size: '25x25'), user_path(@spot.occupying) %>
+		<%= link_to image_tag("message.png", size: '20x20'), user_path(@spot.occupying) %>
 	</p>
 <% end %>
 
