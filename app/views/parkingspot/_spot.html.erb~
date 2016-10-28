@@ -15,7 +15,9 @@
 	</p>
 <% end %>
 
-<%= current_user.name %>
+<% if @spot.occupying == current_user %>
+	<%= "LINK HERE" %>
+<% end %>
 
 
 <%= link_to 'Close', '', {id: 'closeLink'} %>

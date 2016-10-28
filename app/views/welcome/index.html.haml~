@@ -1,3 +1,2 @@
 %h1 Welcome to the UCCS Parking Pal
-%br
 =image_tag("uccs-parking.jpg", border: 0, :size => '520x360')
