@@ -39,9 +39,6 @@
 </meta>
 <br/>
 
-<% if user_signed_in? %>
-  <%= link_to("Logout", destroy_user_session_path, :method => :delete) %>
-<% end %>
 
 <% if current_page?(message_path) || current_page?(message_display_path) || current_page?(message_new_path) %>
   <%= link_to("Inbox", message_path) %>
