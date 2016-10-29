@@ -5,5 +5,7 @@ FactoryGirl.define do
     LPN 'AAA-111'
     email 'user@email.com'
     password 'password'
+    is_handicap false
+    is_parked false
   end
 end

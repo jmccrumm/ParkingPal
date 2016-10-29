@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20161023225314) do
     t.string   "name"
     t.string   "LPN"
     t.boolean  "is_handicap"
+    t.boolean  "is_parked"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

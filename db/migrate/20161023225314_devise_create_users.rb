@@ -5,6 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 			t.string :name
 			t.string :LPN
       t.boolean :is_handicap
+      t.boolean :is_parked
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
