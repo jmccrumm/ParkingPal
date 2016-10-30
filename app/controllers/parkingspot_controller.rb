@@ -7,18 +7,43 @@ class ParkingspotController < ApplicationController
 	end
 	
 	def take 
+		spot_id = params[:spot_id] || 1
+		user_id = params[:user_id] || 1
+		@spot = Parkingspot.find(spot_id)
+		@user = User.find(user_id)
 
-		redirect_to message_path
+		@spot.status = 'taken'
+		@spot.occupying = @user.id
+		@user.is_parked = true
+
+		redirect_to parkinglot_path
 	end
 
 	def reserve
+		spot_id = params[:spot_id] || 1
+		user_id = params[:user_id] || 1
+		@spot = Parkingspot.find(spot_id)
+		@user = User.find(user_id)
 
-		redirect_to schedule_path
+		@spot.status = 'reserved'
+		@spot.occupying = @user.id
+		@user.is_parked = true
+		# add code to start 5 min countdown for reservation
+
+		redirect_to parkinglot_path
 	end
 
 	def leave
+		spot_id = params[:spot_id] || 1
+		user_id = params[:user_id] || 1
+		@spot = Parkingspot.find(spot_id)
+		@user = User.find(user_id)
 
-		redirect_to root_path
+		@spot.status = 'open'
+		@spot.occupying = nil
+		@user.is_parked = false
+
+		redirect_to parkinglot_path
 	end
 
 	def cancel
