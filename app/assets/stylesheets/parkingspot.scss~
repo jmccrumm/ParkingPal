@@ -29,21 +29,10 @@ p.reserved {
 	color: yellow;
 }
 
-.notice-success {
+.notice {
 	width:600px;
 	background-color: green;
 	border: 1px solid rgb(45, 210, 45);
-	border-radius:25px;
-	padding: 15px;
-	margin: 15px;
-	text-align:center;
-	text-color: black;
-}
-
-.notice-failure {
-	width:600px;
-	background-color: red;
-	border: 1px solid rgb(230, 25, 25);
 	border-radius:25px;
 	padding: 15px;
 	margin: 15px;

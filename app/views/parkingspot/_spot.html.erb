@@ -29,11 +29,11 @@
 <%-# user doesn't already have a spot and wants to take open spot -%>
 <% if user_signed_in? && @user.is_parked == false && @spot.status == 'open' %>
 <%= link_to 'Take spot', 'parkingspot/take', onclick: 'take()' %><br />
-<%= link_to 'Reserve spot (5 mins)', '#', onclick: 'reserve()' %><br />
+<%= link_to 'Reserve spot (5 mins)', 'parkingspot/reserve', onclick: 'reserve()' %><br />
 
 <%-# user has previously reserved the spot and wants to take it or cancel -%>
 <% elsif user_signed_in? && @user.id == @spot.occupying && @spot.status == 'reserved' %>
-<%= link_to 'Take spot', 'parkingspot/reserve', onclick: 'take()' %><br />
+<%= link_to 'Take spot', 'parkingspot/take', onclick: 'take()' %><br />
 <%= link_to 'Cancel reservation', 'parkingspot/cancel', onclick: 'leave()' %><br />
 
 <%-# user is holding spot and wants to leave -%>

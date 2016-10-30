@@ -7,23 +7,31 @@ class ParkingspotController < ApplicationController
 	end
 	
 	def take 
+		flash[:success] = "Successfully taken the spot";
+		flash[:failure] = "Failed to take the spot";
 
-		redirect_to message_path
+		redirect_to parkinglot_path
 	end
 
 	def reserve
+		flash[:success] = "Successfully reserved the spot";
+		flash[:failure] = "Failed to reserve the spot";
 
-		redirect_to schedule_path
+		redirect_to parkinglot_path
 	end
 
 	def leave
+		flash[:success] = "Successfully left the spot";
+		flash[:failure] = "Failed to leave the spot";
 
-		redirect_to root_path
+		redirect_to parkinglot_path
 	end
 
 	def cancel
+		flash[:success] = "Successfully canceled your reservation";
+		flash[:failure] = "Failed to cancel your reservation";
 
-		redirect_to stats_path
+		redirect_to parkinglot_path
 	end
 
 end
