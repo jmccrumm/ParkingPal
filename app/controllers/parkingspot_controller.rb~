@@ -23,7 +23,7 @@ class ParkingspotController < ApplicationController
 
 	def cancel
 
-		redirect_to stats_path
+		redirect_to message_path
 	end
 
 end

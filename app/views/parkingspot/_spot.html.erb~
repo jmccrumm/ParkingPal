@@ -34,7 +34,7 @@
 <%-# user has previously reserved the spot and wants to take it or cancel -%>
 <% elsif user_signed_in? && @user.id == @spot.occupying && @spot.status == 'reserved' %>
 <%= link_to 'Take spot', 'parkingspot/reserve', onclick: 'take()' %><br />
-<%= link_to 'Cancel reservation', 'parkingspot/cancel', onclick: 'leave()' %><br />
+<%= link_to 'Cancel reservation', 'stat_path', onclick: 'leave()' %><br />
 
 <%-# user is holding spot and wants to leave -%>
 <% elsif user_signed_in? && @user.id == @spot.occupying && @spot.status == 'taken' %>

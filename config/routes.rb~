@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :users
 	root 'welcome#index'
 
 	get 'user', to: 'user#index'
 
 	"resources :map"
 	get 'map' => 'map#index'
-	match 'map/:postr' => 'map#index', via: [:get, :post], as: 'showspot'
+	get 'map/:postr' => 'map#index', as: 'showspot'
 
 	get 'message', to: 'message#index'
 	get 'message/display', to: 'message#display'
@@ -15,6 +16,9 @@ Rails.application.routes.draw do
 	get 'parkinglot', to: 'parkinglot#index'
 
 	get 'parkingspot', to: 'parkingspot#index'
+	get 'parkingspot/take', to: 'parkingspot#take'
+	get 'parkingspot/reserve', to: 'parkingspot#reserve'
+	get 'parkingspot/leave', to: 'parkingspot#leave'
 
 	get 'schedule', to: 'schedule#index'
 	get 'schedule/modify', to: 'schedule#modify'
