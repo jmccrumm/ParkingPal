@@ -30,16 +30,16 @@
 <% if user_signed_in? && !@user.is_parked && @spot.status == 'open' %>
 <%= link_to 'Take spot', parkingspot_take_path, spot_id: @spot.id, user_id: @user.id %>
 <br />
-<%= link_to 'Reserve spot (5 mins)', '', onclick: 'reserve()' %><br />
+<%= link_to 'Reserve spot (5 mins)', parkingspot_reserve_path, spot_id: @spot.id, user_id: @user.id %><br />
 
 <%-# user has previously reserved the spot and wants to take it or cancel -%>
 <% elsif user_signed_in? && @user.id == @spot.occupying && @spot.status == 'reserved' %>
-<%= link_to 'Take spot', '', onclick: 'take()' %><br />
-<%= link_to 'Cancel reservation', '', onclick: 'leave()' %><br />
+<%= link_to 'Take spot', parkingspot_take_path, spot_id: @spot.id, user_id: @user.id %><br />
+<%= link_to 'Cancel reservation', parkingspot_cancel_path, spot_id: @spot.id, user_id: @user.id %><br />
 
 <%-# user is holding spot and wants to leave -%>
 <% elsif user_signed_in? && @user.id == @spot.occupying && @spot.status == 'taken' %>
-<%= link_to 'Leave spot', '', onclick: 'leave()' %><br />
+<%= link_to 'Leave spot', parkingspot_leave_path, spot_id: @spot.id, user_id: @user.id %><br />
 
 <% end %>
 

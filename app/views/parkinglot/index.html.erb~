@@ -1,9 +1,9 @@
 
 <% if flash[:success] %>
-	<div class="notice-success"><%= flash[:success] %></div>
+	<div class="notice"><%= flash[:success] %></div>
 <% end %>
 <% if flash[:failure] %>
-	<div class="notice-failure"><%= flash[:failure] %></div>
+	<div class="notice"><%= flash[:failure] %></div>
 <% end %>
 
 <table id="parkingspots">
