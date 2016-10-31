@@ -16,10 +16,7 @@ Rails.application.routes.draw do
 	get 'parkinglot', to: 'parkinglot#index'
 
 	get 'parkingspot', to: 'parkingspot#index'
-	get 'parkingspot/take', to: 'parkingspot#take'
-	get 'parkingspot/reserve', to: 'parkingspot#reserve'
-	get 'parkingspot/leave', to: 'parkingspot#leave'
-	get 'parkingspot/cancel', to: 'parkingspot#cancel'
+	get 'parkingspot/:purpose/:user_id/:spot_id' => 'parkingspot#update', as: 'updatespot'
 
 	get 'schedule', to: 'schedule#index'
 	get 'schedule/modify', to: 'schedule#modify'

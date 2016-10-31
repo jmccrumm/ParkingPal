@@ -7,9 +7,9 @@ class ParkingspotController < ApplicationController
 	end
 	
 	def update
-		purpose = params[:purpose].to_i || -1
-		spot_id = params[:spot_id].to_i || -1
-		user_id = params[:user_id].to_i || -1
+		purpose = params[:purpose] || -1
+		spot_id = params[:spot_id] || -1
+		user_id = params[:user_id] || -1
 
 		if spot_id > 0 && user_id > 0
 			@spot = Parkingspot.find(spot_id)
