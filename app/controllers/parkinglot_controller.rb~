@@ -1,6 +1,6 @@
 class ParkinglotController < ApplicationController
 	def	index
-		@parkingspots = Parkingspot.order("id ASC")
+		@parkingspots = Parkingspot.all
 		@parkinglot = Parkinglot.find(1)
 	end
 end

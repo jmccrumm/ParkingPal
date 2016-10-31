@@ -1,5 +1,8 @@
 class MapController < ApplicationController
 	def index
+
+	#@spots = Parkingspot.order("id ASC")
+
 		@spotID = params[:postr].to_i
 
 		if @spotID > 0 

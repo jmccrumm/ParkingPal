@@ -1,0 +1,3 @@
+<% @spots.each |spot| %>
+	<%= spot.id %><br>
+<% end %>

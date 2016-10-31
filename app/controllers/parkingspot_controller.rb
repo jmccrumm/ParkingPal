@@ -52,6 +52,13 @@ class ParkingspotController < ApplicationController
 			else
 				flash[:failure] = "Unknown Error";
 		end
+
+
+		if spot_id > 0 && user_id > 0
+			@spot.save!
+			@user.save!
+		end
+
 		redirect_to parkinglot_path
 	end
 
