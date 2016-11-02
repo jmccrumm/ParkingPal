@@ -1,22 +1,29 @@
+Rails.application.load_seed
 Given(/^The status of the spot is open and spot is not handicap$/) do
-	Rails.application.load_seed
-	@spots = Parkingspot.where(status: 'open', spot_type: 'normal')
+	@spot = Parkingspot.where(status: 'open', spot_type: 'normal').take
+	
+	visit parkinglot_path(@spot.id)
+
 end
 
 Given(/^The user is not handicap$/) do
-	@users = User.where(is_handicap: 'false')
+	@users = User.where(is_handicap: nil)
+	@user = @users[0]
 end
 
 When(/^I click Take Spot$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @spot.status = 'taken'
+  @spot.occupying = @user.id
+  @spot.save!
 end
 
 Then(/^The status of the spot should become taken$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@spot.status).to eq('taken')
 end
 
 Then(/^My name should be listed on that spot$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit parkingspot_path(id: @spot.id)
+  expect(page).to have_content(@user.name)
 end
 
 
