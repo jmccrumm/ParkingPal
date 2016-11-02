@@ -43,57 +43,57 @@ users = [{
 	{
 		email: "email1@email.com",
 		password: "password1",
-		name: "Tracey Mule",
-		LPN: "123 jjj",
+		name: "Daffy Duck",
+		LPN: "Qua-cky",
 		is_parked: true
 	},
 
 	{
 		email: "email2@email.com",
 		password: "password2",
-		name: "Jordan Daniels",
+		name: "Donald Duck",
 		LPN: "222 bbb",
 		is_parked: true
 	},
 	{
 		email: "email3@email.com",
 		password: "password3",
-		name: "Tina Toya",
+		name: "Buggs Bunny",
 		LPN: "000 nnn",
 		is_parked: true
 		},
 	{
 		email: "email4@email.com",
 		password: "password4",
-		name: "Billy Bob",
+		name: "Elmer Fudd",
 		LPN: "345 cxc",
 		is_parked: true
 	},
 	{
 		email: "email5@email.com",
 		password: "password5",
-		name: "Joe Schmo",
+		name: "Roger Rabbit",
 		LPN: "sss 852",
 		is_parked: true
 	},
 	{
 		email: "email6@email.com",
 		password: "password6",
-		name: "Johnny Boy",
+		name: "Speedy Gonzolaz",
 		LPN: "H20 111",
 		is_parked: true
 	},
 	{
 		email: "email7@email.com",
 		password: "password7",
-		name: "Liz Lemon",
+		name: "Road Runner",
 		LPN: "lol 666",
 		is_parked: true
 	},
 	{
 		email: "email8@email.com",
 		password: "password8",
-		name: "Chris Columbus",
+		name: "Wylie Chotoie",
 		LPN: "cvb 888",
 		is_parked: false
 	},
@@ -107,35 +107,35 @@ users = [{
 	{
 		email: "email10@email.com",
 		password: "password10",
-		name: "Jane Doe",
+		name: "Dock Dodgers",
 		LPN: "xxx 678",
 		is_parked: false
 	},
 	{
 		email: "email11@email.com",
 		password: "password11",
-		name: "Sassy Tee",
+		name: "Eager Young Space Cadet",
 		LPN: "ghy 647",
 		is_parked: false
 	},
 	{
 		email: "email12@email.com",
 		password: "password12",
-		name: "Mallory Turner",
+		name: "Porkey Pig",
 		LPN: "cvs 987",
 		is_parked: false
 	},
 	{
 		email: "email13@email.com",
 		password: "password13",
-		name: "Connie Smith",
+		name: "Tweety",
 		LPN: "nmy 944",
 		is_parked: false
 	},
 	{
 		email: "email14@email.com",
 		password: "password14",
-		name: "Vicky Lee",
+		name: "Malificient Bystander",
 		LPN: "mop 222",
 		is_parked: false
 	}]
