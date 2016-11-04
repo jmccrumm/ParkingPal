@@ -13,7 +13,8 @@ RSpec.describe Parkingspot, type: :model do
   		let(:user) {FactoryGirl.build :user, :is_parked => true}
   		let(:spot) {FactoryGirl.build :parkingspot, :occupying => user.id }
 
-			its(:occupying) {should_not == nil}
+			
+				its(:occupying) {should_not == nil}
 
   		it 'recognize logged in user has the spot' do
   			expect(spot.occupying).to eq(user.id)

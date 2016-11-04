@@ -1,0 +1,8 @@
+
+<% @receipts.each do |receipt| %>
+<%	 message = receipt %>
+<%	 #read = receipt.is_unread? %>
+<%= message.participants[1].name%> --
+<%= message.subject %> -- 
+<%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") -- %><br>
+<% end %>

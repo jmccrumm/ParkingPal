@@ -9,7 +9,7 @@ class MessageController < ApplicationController
 		#current_user gets the last conversation (chronologically, the first in the inbox)
 		#conversation = current_user.mailbox.inbox.first
 		mailboxVar = current_user.mailbox
-		conversation = mailboxVar.conversations
+		conversation = mailboxVar.conversations.all
 		@receipts = conversation
 
 		#conversation = current_user.mailbox.inbox

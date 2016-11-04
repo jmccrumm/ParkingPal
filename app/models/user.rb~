@@ -6,13 +6,4 @@ class User < ActiveRecord::Base
 
 	has_one :schedule
 	acts_as_messageable
-
-	def mailboxer_name
-		return self.name
-	end
-
-	def mailboxer_email(object)
-		return self.email
-	end
-
 end

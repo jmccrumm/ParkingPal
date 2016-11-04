@@ -10,4 +10,12 @@ class UserController < ApplicationController
 		@users = current_user
 	end
 
+	def mailboxer_name
+		return self.name
+	end
+
+	def mailboxer_email(object)
+		return self.email
+	end
+
 end
