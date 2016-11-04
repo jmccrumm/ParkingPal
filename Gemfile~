@@ -32,6 +32,9 @@ gem 'autoprefixer-rails'
 #user authentication system?
 gem 'devise'
 
+#mailing system
+gem 'mailboxer'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
