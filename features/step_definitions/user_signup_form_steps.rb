@@ -3,7 +3,7 @@ Given(/^I am on the account page$/) do
 end
 
 Given(/^I am not logged in$/) do
-  #new_user_session = null 
+  new_user_session = nil 
 
 end
 
