@@ -8,8 +8,9 @@ end
 
 When(/^I view the options for that spot$/) do
 	@spots.each do |spot|
-		visit parkingspot_path(spot.id)
+		@spot = Parkingspot.find(spot.id)
 	end
+	visit parkingspot_path(@spot.id)
 end
 
 Then(/^I should not be able to take the spot$/) do

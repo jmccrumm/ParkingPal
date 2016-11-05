@@ -1,4 +1,4 @@
-Rails.application.load_seed
+#Rails.application.load_seed
 Given(/^The status of the spot is open and spot is not handicap$/) do
 	@spot = Parkingspot.where(status: 'open', spot_type: 'normal').take
 	
