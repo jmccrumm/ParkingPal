@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
 		:recoverable, :rememberable, :trackable, :validatable
 
 	has_one :schedule
+
+	
+	validates :LPN, format: {with: /[a-zA-Z0-9]{3}-?[a-zA-Z0-9]{3,4}/, message: 'Invalid License Plate'}
 end

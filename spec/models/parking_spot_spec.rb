@@ -5,6 +5,9 @@ require 'rspec/its'
 RSpec.describe Parkingspot, type: :model do
 
   it { is_expected.to validate_presence_of(:status) }
+  it { is_expected.to validate_presence_of(:parkinglot_id) }
+  it { is_expected.to validate_acceptance_of(:status)}
+  it { is_expected.to validate_acceptance_of(:spot_type)}
 
   describe 'Taken spot', 'Reserved spot' do
 	
