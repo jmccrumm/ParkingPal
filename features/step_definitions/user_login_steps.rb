@@ -10,4 +10,5 @@ end
 Then(/^I should go to my account page and see all my information$/) do
   click_button 'submit'
   visit user_path
+  # expect stuff
 end

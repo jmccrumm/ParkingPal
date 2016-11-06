@@ -12,5 +12,5 @@ end
 
 Then(/^I should see available options for spot with id "([^"]*)"$/) do |id|
 	expect(page).to have_content(@spot.id)
-	expect(page).to have_content(@spot.status)
+	expect(page).to have_content(@spot.status.upcase)
 end

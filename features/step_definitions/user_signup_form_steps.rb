@@ -13,4 +13,5 @@ end
 
 Then(/^I should see a form that asks for full name, lpn, email, password, schedule$/) do
   visit new_user_registration_path
+  # expect stuff
 end

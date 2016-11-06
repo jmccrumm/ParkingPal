@@ -1,20 +1,21 @@
-#Rails.application.load_seed
+Rails.application.load_seed
 Given(/^The status of the spot is open and spot is not handicap$/) do
 	@spot = Parkingspot.where(status: 'open', spot_type: 'normal').take
 	
-	visit parkinglot_path(@spot.id)
+	visit parkingspot_path(@spot.id)
 
 end
 
 Given(/^The user is not handicap$/) do
 	@users = User.where(is_handicap: nil)
 	@user = @users[0]
+  current_user = @user
 end
 
 When(/^I click Take Spot$/) do
   @spot.status = 'taken'
   @spot.occupying = @user.id
-  @spot.save!
+  #@spot.save!
 end
 
 Then(/^The status of the spot should become taken$/) do
@@ -22,8 +23,9 @@ Then(/^The status of the spot should become taken$/) do
 end
 
 Then(/^My name should be listed on that spot$/) do
-  visit parkingspot_path(id: @spot.id)
-  expect(page).to have_content(@user.name)
+  visit parkingspot_path(id: @user.id)
+  #expect(page).to have_content(@user.name)
+  expect(page).to have_content('Me')
 end
 
 

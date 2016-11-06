@@ -5,8 +5,8 @@ class Parkingspot < ActiveRecord::Base
 	validates :status, presence: true
 	validates :parkinglot_id, presence: true
 
-	validates :status, acceptance: {accept: ['open','taken', 'reserved']}
-	validates :spot_type, acceptance: {accept: ['handicap','normal']}
+	#validates :status, acceptance: {accept: ['open','taken', 'reserved']}
+	#validates :spot_type, acceptance: {accept: ['handicap','normal']}
 
 	if :occupying != nil
 		validates_associated :user
