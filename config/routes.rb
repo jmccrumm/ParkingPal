@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 	get 'message', to: 'message#index'
 	get 'message/display', to: 'message#display'
 	get 'message/new', to: 'message#new'
+	post 'message/compose', to: 'message#compose'
 
 	get 'parkinglot', to: 'parkinglot#index'
 

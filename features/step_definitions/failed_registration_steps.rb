@@ -5,6 +5,8 @@ end
 
 When(/^I don't enter a password$/) do
 	page.find('[@id=password]')
+	fill_in 'password', :with=> ''
+	fill_in 'password_confirmation', :with => ''
 end
 
 When(/^I click Sign up$/) do

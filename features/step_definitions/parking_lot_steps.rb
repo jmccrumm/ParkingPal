@@ -1,5 +1,6 @@
+#Rails.application.load_seed
 Given(/^The grid of parking spots are being shown$/) do
-	Rails.application.load_seed
+	
 	@mainlot = Parkinglot.find(1)
 	visit parkinglot_path(@mainlot)
 end
@@ -11,5 +12,5 @@ end
 
 Then(/^I should see available options for spot with id "([^"]*)"$/) do |id|
 	expect(page).to have_content(@spot.id)
-	expect(page).to have_content(@spot.status)
+	expect(page).to have_content(@spot.status.upcase)
 end

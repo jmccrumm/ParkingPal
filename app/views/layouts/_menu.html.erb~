@@ -45,7 +45,7 @@
 	<% if false %>
   	<%= link_to("Link to test message", message_display_path) %>
 	<% end %>
-  <%= link_to("Compose", message_new_path) %>
+  <%= link_to("Compose", message_compose_path) %>
   <br/>
 <% end %>
 

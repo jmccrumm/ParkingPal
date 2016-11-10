@@ -3,7 +3,6 @@ Given(/^I'm on the signup page$/) do
 end
 
 When(/^I fill in ALL the fields$/) do
-#//pending # Write code here that turns the phrase above into concrete actions
 	fill_in 'name', :with => 'Daffy Duck'
 	fill_in 'LPN', :with => 'LPN'
 	fill_in 'email', :with => 'email@email.com'
@@ -17,4 +16,5 @@ end
 
 Then(/^I should get a page that displays my name, car type, plates \(ID\), and input my class schedule\.$/) do
   visit user_path
+  # expect stuff
 end

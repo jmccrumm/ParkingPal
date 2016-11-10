@@ -3,13 +3,14 @@ Given(/^The parking spot is reserved$/) do
 end
 
 Given(/^I am not the user currently holding the spot$/) do
-	@user = User.create!(name: 'fake_user', LPN: '123 xyz')
+	@user = User.create!(name: 'fake_user', LPN: '123 xyz', email: 'email123@email.com', password: 'password')
 end
 
 When(/^I view the options for that spot$/) do
 	@spots.each do |spot|
-		visit parkingspot_path(spot.id)
+		@spot = Parkingspot.find(spot.id)
 	end
+	visit parkingspot_path(@spot.id)
 end
 
 Then(/^I should not be able to take the spot$/) do
