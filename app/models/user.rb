@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 		:recoverable, :rememberable, :trackable, :validatable
 
 	has_one :schedule
-<<<<<<< HEAD
+	
 	acts_as_messageable
 
 	def mailboxer_name
@@ -16,9 +16,6 @@ class User < ActiveRecord::Base
 		return self.email
 	end
 
-=======
-
 	
 	validates :LPN, format: {with: /\w{3}[-\s]?\w{3,4}/, message: 'Invalid License Plate'}
->>>>>>> 18a405bbe5bd17ef014d3518076a7d6b54ac1f9a
 end

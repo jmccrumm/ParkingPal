@@ -4,7 +4,7 @@ end
 
 When(/^I am logged in with user id "([^"]*)" and I click the account icon$/) do |id|
   @user = User.find(id)
-  current_user = @user
+  current_user = @user.id
   # make user sign in somehow
   visit user_path(@user.id)
 end

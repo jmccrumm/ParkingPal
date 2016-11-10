@@ -28,6 +28,8 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'autoprefixer-rails'
 
+#for stats pie chart
+gem 'googlecharts'
 
 #user authentication system?
 gem 'devise'
