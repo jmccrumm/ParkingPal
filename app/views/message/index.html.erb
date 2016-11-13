@@ -2,9 +2,12 @@
 <% @receipts.each do |receipt| %>
 <%	 message = receipt %>
 <%	 #read = receipt.is_unread? %>
-	<% if message.participants[1].id != current_user.id %>
+<% if message.participants[1] != nil %>
+	<% if message.participants[1].id != current_user.id or message.participants[1].id == message.participants[0].id%>
+
 		<%= message.participants[1].name%> --
 		<%= link_to message.subject, message_display_path(msg: message) %> -- 
 		<%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %><br>
 	<% end %>
+<% end %>
 <% end %>
