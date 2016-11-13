@@ -1,5 +1,12 @@
 <h2>Compose new message</h2>
 
+<% if flash[:success] %>
+  <div class="notice-success"><%= flash[:success] %></div>
+<% end %>
+<% if flash[:failure] %>
+  <div class="notice-failure"><%= flash[:failure] %></div>
+<% end %>
+
 <%= form_tag(message_compose_path, method: "post") do %>
 
   <div class="field">
@@ -18,6 +25,6 @@
   </div>
 
   <div class="actions">
-    <%= submit_tag "Send" %>
+    <%= submit_tag "Send", id: 'submit' %>
   </div>
 <% end %>

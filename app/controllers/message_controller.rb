@@ -29,8 +29,16 @@ class MessageController < ApplicationController
 		recipient = User.where(["email = :r", {r: params['recipient'][0]}])
 		subject = params['subject'][0]
 		body = params['body'][0]
-		conversation = current_user.send_message(recipient, body, subject).conversation
-		redirect_to message_path
+
+		if recipient.empty?
+			flash[:failure] = "User does not exist"
+			redirect_to message_new_path
+		else
+			conversation = current_user.send_message(recipient, body, subject).conversation
+			flash[:success] = "Successfully sent message"
+			redirect_to message_path
+		end
+		
 	end
 
 	def new
