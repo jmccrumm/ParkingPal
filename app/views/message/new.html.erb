@@ -3,7 +3,7 @@
 <%= form_tag(message_compose_path, method: "post") do %>
 
   <div class="field">
-    <%= label_tag "To" %><br />
+    <%= label_tag "To: (enter email)" %><br />
     <%= text_field 'recipient', nil %>
   </div>
 

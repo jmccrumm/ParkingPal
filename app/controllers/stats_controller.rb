@@ -8,7 +8,9 @@ class StatsController < ApplicationController
 
 		@piechart = Gchart.pie(data: [@available, @reserved, @taken], 
 			labels: ['Available: ' + @available.to_s, 'Reserved: ' + @reserved.to_s, 'Taken: ' + @taken.to_s],
-			title: 'Lot Statistics (out of ' + @totalspots.to_s + ' spots)', theme: :pastel,
-			bg: '0000FF00');
+			title: 'Lot Statistics (out of ' + @totalspots.to_s + ' spots)', theme: :keynote,
+
+			bg: 'a50e87');
+
 	end
 end
