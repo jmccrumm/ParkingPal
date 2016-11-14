@@ -1,6 +1,8 @@
 <h2>Compose new message</h2>
 
-
+<% if flash[:success] %>
+  <div class="notice-success"><%= flash[:success] %></div>
+<% end %>
 <% if flash[:failure] %>
   <div class="notice-failure"><%= flash[:failure] %></div>
 <% end %>
@@ -8,20 +10,22 @@
 <%= form_tag(message_compose_path, method: "post") do %>
 
   <div class="field">
-    <%= label_tag "To:" %><br />
-    <%= text_field 'recipient', nil, value: session[:recipient], placeholder: "email address"  %>
+    <%= label_tag "To " %><br />
+    <%= text_field( 'recipient', nil, placeholder: 'ex: joe@joe.com') %>
   </div>
-
+  &nbsp; 
+  &nbsp;
   <div class="field">
-    <%= label_tag "Subject" %><br />
-    <%= text_field 'subject', nil, value: session[:subject]  %>
+    <%= label_tag "Subject"%><br />
+    <%= text_field 'subject', nil  %>
   </div>
-
+  &nbsp; 
+  &nbsp;
   <div class="field">
     <%= label_tag "Body" %><br>
-    <%= text_area 'body', nil, rows:10, cols:25, value: session[:body] %>
+    <%= text_area('body', nil, rows:10, cols:35, placeholder: 'Write Message')%>
   </div>
-
+   
   <div class="actions">
     <%= submit_tag "Send", id: 'submit' %>
   </div>

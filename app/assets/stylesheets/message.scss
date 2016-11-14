@@ -2,8 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.body{
-			
-          background-color: darkslategrey;
-          /*width: 415px;*/
-      }
+#body_ {
+    background-color: #d7d7d7;
+    width: 25%;
+    padding: 20px;
+    border: 2px solid #592a6e;
+    border-radius: 4px;
+    color: black;
+}
+
+#recipient_ {
+    background-color: #d7d7d7;
+    border: 2px solid #592a6e;
+    width: 200px;
+    height: 30px;
+}
+
+#subject_ {
+    background-color: #d7d7d7;
+    border: 2px solid #592a6e;
+    width: 200px;
+    height: 30px;
+}
+
+#submit {
+    padding: 0px;
+    color: #141e2a;
+    width: 100px;
+    display: inline;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #d7d7d7;
+    border: 2px solid #592a6e;
+    margin-left: 225px;
+    margin-top: 10px;
+}
