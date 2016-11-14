@@ -7,19 +7,22 @@ Given(/^The status of the spot is open and spot is not handicap$/) do
 end
 
 Given(/^The user is not handicap$/) do
-  @users = User.where(is_handicap: nil)
+  @users = User.where(is_handicap: nil, is_parked: false)
   @user = @users[0]
 end
 
 And(/^The user is signed in$/) do
-  visit new_user_session_path
-  fill_in 'email', :with => 'email@email.com'
-  fill_in 'password', :with=> 'password'
-  click_button "Log in"
-  @user = User.find(current_user)
+  visit user_path
+  fill_in 'email', :with => 'email8@email.com'
+    fill_in 'password', :with=> 'password8'
+    click_button 'submit'
 end
 
 When(/^I click Take Spot$/) do
+  visit parkingspot_path(@spot.id)
+  page.find('[@id=takeSpot]').click
+  visit parkinglot_path
+  visit parkingspot_path(@spot.id)
   @spot.status = 'taken'
   @spot.occupying = @user.id
   @spot.save!
@@ -30,7 +33,7 @@ Then(/^The status of the spot should become taken$/) do
 end
 
 Then(/^My name should be listed on that spot$/) do
-  visit parkingspot_path(id: @user.id)
+  visit parkingspot_path(id: @spot.id)
   #expect(page).to have_content(@user.name)
   expect(page).to have_content('Me')
 end

@@ -38,6 +38,7 @@ users = [{
 		password: "password",
 		name: "Mike Spaceman",
 		LPN: "111 xxx",
+		is_handicap: true,
 		is_parked: true
 	},
 	{
@@ -45,6 +46,7 @@ users = [{
 		password: "password1",
 		name: "Daffy Duck",
 		LPN: "Qua-cky",
+		is_handicap: true,
 		is_parked: true
 	},
 
