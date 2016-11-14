@@ -4,9 +4,10 @@ end
 
 When(/^I am logged in with user id "([^"]*)" and I click the account icon$/) do |id|
   @user = User.find(id)
-  current_user = @user.id
-  # make user sign in somehow
-  visit user_path(@user.id)
+  visit user_path
+	fill_in 'email', :with => 'email@email.com'
+  	fill_in 'password', :with=> 'password'
+  	click_button 'submit'
 end
 
 Then(/^I should see details of the user account as well as a button to edit info$/) do
