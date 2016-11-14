@@ -11,19 +11,19 @@
 
   <div class="field">
     <%= label_tag "To " %><br />
-    <%= text_field( 'recipient', nil, placeholder: 'ex: joe@joe.com') %>
+    <%= text_field( 'recipient', nil, placeholder: 'ex: joe@joe.com', value: session[:recipient]) %>
   </div>
   &nbsp; 
   &nbsp;
   <div class="field">
     <%= label_tag "Subject"%><br />
-    <%= text_field 'subject', nil  %>
+    <%= text_field 'subject', nil, value: session[:subject]  %>
   </div>
   &nbsp; 
   &nbsp;
   <div class="field">
     <%= label_tag "Body" %><br>
-    <%= text_area('body', nil, rows:10, cols:35, placeholder: 'Write Message')%>
+    <%= text_area('body', nil, rows:10, cols:35, placeholder: 'Write Message', value: session[:body])%>
   </div>
    
   <div class="actions">
