@@ -50,8 +50,8 @@ class MessageController < ApplicationController
 			session[:recipient] = ''
 			session[:subject] = ''
 			session[:body] = ''
+			flash[:success] = "Successfully sent message"
 			redirect_to message_path
-			#flash[:success] = "Successfully sent message"
 		end
 		
 	end
