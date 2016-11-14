@@ -26,21 +26,37 @@ class MessageController < ApplicationController
 
 	def compose
 		#recipient = User.find(email: params['recipient'])
-		recipient = User.where(["email = :r", {r: params['recipient'][0]}])
-		subject = params['subject'][0]
-		body = params['body'][0]
+		@recipient = User.where(["email = :r", {r: params['recipient'][0]}])
+		@subject = params['subject'][0]
+		@body = params['body'][0]
 
-		if recipient.empty?
+		if !@recipient.empty?
+			session[:recipient] = @recipient[0].email
+		end
+		session[:subject] = @subject
+		session[:body] = @body
+
+		if @recipient.empty?
 			flash[:failure] = "User does not exist"
 			redirect_to message_new_path
+		elsif @subject.empty?
+			flash[:failure] = "Please enter a subject"
+			redirect_to message_new_path
+		elsif @body.empty?
+			flash[:failure] = "Please enter something to send"
+			redirect_to message_new_path
 		else
-			conversation = current_user.send_message(recipient, body, subject).conversation
-			flash[:success] = "Successfully sent message"
+			conversation = current_user.send_message(@recipient, @body, @subject).conversation
+			session[:recipient] = ''
+			session[:subject] = ''
+			session[:body] = ''
 			redirect_to message_path
+			#flash[:success] = "Successfully sent message"
 		end
 		
 	end
 
 	def new
+		
 	end
 end

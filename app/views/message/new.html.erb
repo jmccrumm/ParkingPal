@@ -11,17 +11,17 @@
 
   <div class="field">
     <%= label_tag "To: (enter email)" %><br />
-    <%= text_field 'recipient', nil %>
+    <%= text_field 'recipient', nil, value: session[:recipient] %>
   </div>
 
   <div class="field">
     <%= label_tag "Subject" %><br />
-    <%= text_field 'subject', nil  %>
+    <%= text_field 'subject', nil, value: session[:subject]  %>
   </div>
 
   <div class="field">
     <%= label_tag "Body" %><br>
-    <%= text_area 'body', nil, rows:10, cols:25 %>
+    <%= text_area 'body', nil, rows:10, cols:25, value: session[:body] %>
   </div>
 
   <div class="actions">

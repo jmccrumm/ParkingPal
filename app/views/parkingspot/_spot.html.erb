@@ -20,7 +20,7 @@
 			<%= "Me" %>
 		<% else %>
 			<%= User.find(@spot.occupying).name %>
-			<%= link_to image_tag("message.png", size: '20x20'), message_new_path(@spot.occupying) %>
+			<%= link_to image_tag("message.png", size: '20x20'), message_new_path(@spot.occupying) if user_signed_in? %>
 		<% end %>
 	</p>
 <% end %>
