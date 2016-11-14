@@ -146,6 +146,14 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/controllers/parkingspot_controller.rb": [
@@ -238,6 +246,8 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/controllers/parkinglot_controller.rb": [
@@ -316,6 +326,6 @@
         0
       ]
     },
-    "timestamp": 1479080778
+    "timestamp": 1479087540
   }
 }
