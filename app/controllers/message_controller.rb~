@@ -37,20 +37,20 @@ class MessageController < ApplicationController
 		session[:body] = @body
 
 		if @recipient.empty?
-			#flash[:failure] = "User does not exist"
+			flash[:failure] = "User does not exist"
 			redirect_to message_new_path
 		elsif @subject.empty?
-			#flash[:failure] = "Please enter a subject"
+			flash[:failure] = "Please enter a subject"
 			redirect_to message_new_path
 		elsif @body.empty?
-			#flash[:failure] = "Please enter something to send"
+			flash[:failure] = "Please enter something to send"
 			redirect_to message_new_path
 		else
 			conversation = current_user.send_message(@recipient, @body, @subject).conversation
 			session[:recipient] = ''
 			session[:subject] = ''
 			session[:body] = ''
-			#flash[:success] = "Successfully sent message"
+			flash[:success] = "Successfully sent message"
 			redirect_to message_path
 		end
 		
