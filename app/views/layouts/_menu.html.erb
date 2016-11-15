@@ -46,17 +46,8 @@
 <% end %>
 
 <% if current_page?(user_path) %>
-  <%= link_to("Schedule", schedule_path) %>
+  <%= link_to("Edit Account", edit_user_registration_path) %>
   <br/>
 <% end %>
 
-<% if current_page?(schedule_path) %>
-  <%= link_to("< Back to Account", user_path) %>
-  <%= link_to("Change Schedule", schedule_modify_path) %>
-  <br/>
-<% end %>
 
-<% if current_page?(schedule_modify_path) %>
-  <%= link_to("< Back to Schedule", schedule_path) %>
-  <br/>
-<% end %>

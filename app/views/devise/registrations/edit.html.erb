@@ -31,6 +31,17 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label "Name" %><br>
+    <%= f.text_field :name, autocomplete: "off", :id => 'name' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "License Plate Number" %><br>
+    <em>(6 or 7 characters)</em><br />
+    <%= f.text_field :LPN, autocomplete: "off", required: true, pattern: ".{6,7}", :id => 'LPN'  %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
