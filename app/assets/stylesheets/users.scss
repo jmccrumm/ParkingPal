@@ -1,3 +1,48 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h2 {
+      	  font-size: 20px;
+          display: left;
+          color: #531801;
+          
+          text-align: left; 
+          padding: 0px;
+          padding-right: 20px;
+          padding-left: 20px; 
+
+      }
+
+p{
+	
+	color: #00000f;
+	padding-left: 20px; 
+}
+
+.bb {
+    border: 2px solid #391C0C;
+	padding-bottom: 10px;
+	background-color: #ab9fb0;
+	overflow: hidden;
+	width: 50%;
+}
+
+#user_email {
+	color: #00000f;
+}
+
+#update{
+	padding: 0px;
+	color: #696666;
+	width: 100px;
+	display: inline;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+	font-weight: bold;
+	background-color: #fff7f7;
+	margin-left: 150px;
+	margin-top: 15px;
+	margin-bottom: 60px;
+}
