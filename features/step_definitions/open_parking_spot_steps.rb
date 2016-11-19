@@ -34,7 +34,6 @@ end
 
 Then(/^My name should be listed on that spot$/) do
   visit parkingspot_path(id: @spot.id)
-  #expect(page).to have_content(@user.name)
   expect(page).to have_content('Me')
 end
 

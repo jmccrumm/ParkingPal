@@ -13,6 +13,5 @@ end
 Then(/^I should see details of the user account as well as a button to edit info$/) do
   expect(page).to have_content(@user.name)
   expect(page).to have_content(@user.LPN)
-  # expect user's schedule to be displayed
-  # expect there to be an "edit account" button
+  expect(page).to have_content("Edit Account")
 end

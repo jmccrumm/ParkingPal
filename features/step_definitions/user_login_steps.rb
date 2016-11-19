@@ -10,5 +10,8 @@ end
 Then(/^I should go to my account page and see all my information$/) do
   click_button 'submit'
   visit user_path
-  # expect stuff
+  @user = User.where(email: 'email@email.com')
+  expect(page).to have_content("Mike Spaceman")
+  expect(page).to have_content("email@email.com")
+  expect(page).to have_content("111 xxx")
 end

@@ -3,9 +3,9 @@ Given(/^I'm on the signup page$/) do
 end
 
 When(/^I fill in ALL the fields$/) do
-	fill_in 'name', :with => 'Daffy Duck'
-	fill_in 'LPN', :with => 'LPN'
-	fill_in 'email', :with => 'email@email.com'
+	fill_in 'name', :with => 'New Person'
+	fill_in 'LPN', :with => 'LPN-000'
+	fill_in 'email', :with => 'newemail@email.com'
 	fill_in 'password', :with=> 'password'
 	fill_in 'password_confirmation', :with => 'password'
 end
@@ -14,7 +14,9 @@ When(/^click register$/) do
   click_button 'Sign up'
 end
 
-Then(/^I should get a page that displays my name, car type, plates \(ID\), and input my class schedule\.$/) do
+Then(/^I should get a page that displays my name, email, and LPN$/) do
   visit user_path
-  # expect stuff
+  expect(page).to have_content("New Person")
+  expect(page).to have_content("newemail@email.com")
+  expect(page).to have_content("LPN-000")
 end

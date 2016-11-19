@@ -1,5 +1,4 @@
 Given(/^User is not signed in$/) do
-  #user_signed_in?
   current_user = nil
 end
 

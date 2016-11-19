@@ -11,7 +11,10 @@ When(/^I click sign up$/) do
   click_link('Sign up')
 end
 
-Then(/^I should see a form that asks for full name, lpn, email, password, schedule$/) do
+Then(/^I should see a form that asks for full name, lpn, email, password$/) do
   visit new_user_registration_path
-  # expect stuff
+  expect(page).to have_content("Name")
+  expect(page).to have_content("License plate number")
+  expect(page).to have_content("Email")
+  expect(page).to have_content("Password")
 end
