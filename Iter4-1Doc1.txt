@@ -1,0 +1,13 @@
+User Stories
+
+During the duration of the project, our user stories and the implementation of them changed quite a bit. The majority of the changes had to do with removing user stories (features) due to a limited amount of time during the semester. A few of the others were altered slightly. Seeing as we began with an overload of features that pretty much covered anything, no new ones were added during development, although a carpool feature was mentioned but never implemented.
+
+The user stories we removed were mostly the ones involving parking lot security. For instance, snitching on illegal parkers, communication monitoring, and parking violation statistics were all removed. These features didn't seem absolutely vital to the project as a whole and therefore were pushed down the priority list. If the project continued on in development in the future, these features may be relevant later on. 
+
+Another major user story we never ended up implementing was the idea of inputting a user schedule. Although this would be beneficial in refining statistics of parking trends as well as setting up users to collaborate with one another, it would ultimately be a threat to the security of the users, so it was never implemented. It would also have been a pretty extensive feature to work with and involved high and possibly inachievable velocity numbers.
+
+One of the stories that changed but was still implemented was the reservation system. We still included a way to reserve a spot, but we didn't create a countdown/time limit for when the spot would automatically become open again. This may still be implemented in the last iteration considering that it's a pretty important feature, but as of now it remains just a simple system that is only updated by the user holding the spot.
+
+The stats feature was also simplified immensely, due to the fact that a working product would need to be out for a while to create most of the numbers (trends). Instead of displaying weekly/daily trends in parking, it just shows the current numbers of open, reserved, and taken spots.
+
+A lot of user stories were altered or removed over all, but we kept what was most important and vital to the main idea of the product as well as the customer's needs.
