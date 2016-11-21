@@ -1,0 +1,6 @@
+At the start of Iteration 4-1, we had 100 total warnings. 
+30 of which were "IrresponsibleModule" warnings from controllers, models, test controllers and models, finally from migrate files.
+
+We went in adding simple comments to the top of the ruby files to remove all of the "IrresponsibleModule" warnings. 
+Thus leaving us with 70 total warnings left. The rest being duplicate code, "InstanceVariableAssumption",  "ToManyInstanceVariables", "Create"model"#change", and some warnings with the gems we are using.
+We are planning on fixing all of these warnings when we refactor, that is all the ones we made - we will not be touching the warnings that are in a file that was created by gems.

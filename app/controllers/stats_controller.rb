@@ -1,3 +1,4 @@
+#stats controller
 class StatsController < ApplicationController
 	def index
 		require 'gchart'

@@ -1,3 +1,4 @@
+#test controller
 require 'test_helper'
 
 class ParkinglotControllerTest < ActionController::TestCase

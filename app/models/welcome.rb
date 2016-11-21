@@ -1,2 +1,3 @@
+#welcome page model - never used...
 class Welcome < ActiveRecord::Base
 end

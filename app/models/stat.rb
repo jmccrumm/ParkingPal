@@ -1,2 +1,3 @@
+#stats model...
 class Stat < ActiveRecord::Base
 end

@@ -1,3 +1,4 @@
+#Controls our map
 class MapController < ApplicationController
 	def index
 

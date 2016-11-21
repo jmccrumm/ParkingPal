@@ -1,3 +1,4 @@
+#user controller
 class UserController < ApplicationController
 	#extend Mailboxer::Models::Messageable::ActiveRecordExtension
 	protect_from_forgery prepend: true

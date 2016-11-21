@@ -1,2 +1,3 @@
+#messages model...
 class Message < ActiveRecord::Base
 end

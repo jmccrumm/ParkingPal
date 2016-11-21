@@ -1,3 +1,4 @@
+#some migrate...
 class CreateParkinglots < ActiveRecord::Migration
   def change
     create_table :parkinglots do |t|

@@ -1,3 +1,4 @@
+#test models...
 require 'test_helper'
 
 class ParkingspotTest < ActiveSupport::TestCase

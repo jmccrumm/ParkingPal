@@ -1,3 +1,4 @@
+#test models...
 require 'test_helper'
 
 class MapTest < ActiveSupport::TestCase

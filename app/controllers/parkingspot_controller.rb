@@ -1,3 +1,4 @@
+#handles parking spot logic
 class ParkingspotController < ApplicationController
 	def index
 		id = params[:id] || 1
