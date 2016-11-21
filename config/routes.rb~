@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 	get 'message/new', to: 'message#new'
 	post 'message/compose', to: 'message#compose'
 	get 'message/reply', to: 'message#reply'
+	post 'message/send_reply', to: 'message#send_reply'
+	delete 'message/trash', to: 'message#trash'
 
 	get 'parkinglot', to: 'parkinglot#index'
 

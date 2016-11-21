@@ -72,12 +72,12 @@ class MessageController < ApplicationController
 	end
 
   def trash
-    conversation.move_to_trash(current_user)
+		msgid = params['msg'];
+		conversation = current_user.mailbox.conversations.find(msgid)
+		conversation.mark_as_deleted current_user
     redirect_to :back
   end
 
   def untrash
-    conversation.untrash(current_user)
-    redirect_to :back
   end
 end

@@ -10,9 +10,10 @@
 <% @receipts.each do |receipt| %>
 <%	 message = receipt %>
 <%	 #read = receipt.is_unread? %>
-<% if message.participants[1] != nil %>
-		<%= message.participants[1].name%> --
+<% if message.participants[1] != nil && message.is_deleted?(current_user)  %>
+		<%= message.participants[1].name %> --
 		<%= link_to message.subject, message_display_path(msg: message) %> -- 
-		<%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %><br>
+		<%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+		<%= link_to "Delete", message_trash_path(msg: message) %><br>
 	<% end %>
 <% end %>
