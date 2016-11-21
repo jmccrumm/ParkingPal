@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
 	validates :email, confirmation: true
 	validates :email, uniqueness: true
 
-	#cuases issues when trying to update the user account, for taking/leaving/reserving a parking spot
 	#validates :password, presence: true
 	#validates_length_of :password, :minimum => 6, :allow_nil => false
 

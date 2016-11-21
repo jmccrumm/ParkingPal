@@ -17,7 +17,7 @@ class MessageController < ApplicationController
 	end
 
 	def display
-		@duplicated = false;
+		@displayed = false;
 		msgid = params['msg'];
 		@message = current_user.mailbox.conversations.find(msgid)
 		#@body = @message.receipts_for(current_user)

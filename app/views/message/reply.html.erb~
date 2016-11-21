@@ -1,0 +1,20 @@
+<h2>Reply message</h2>
+
+<% if flash[:success] %>
+  <div class="notice-success"><%= flash[:success] %></div>
+<% end %>
+<% if flash[:failure] %>
+  <div class="notice-failure"><%= flash[:failure] %></div>
+<% end %>
+
+<%= form_tag(message_send_reply_path, method: "post") do %>
+  <div class="field">
+		<%= hidden_field_tag 'msg', @msgid %>
+    <%= label_tag "Body" %><br>
+    <%= text_area('body', nil, rows:10, cols:35, placeholder: 'Write Message', value: session[:body])%>
+  </div>
+   
+  <div class="actions">
+    <%= submit_tag "Send", id: 'submit' %>
+  </div>
+<% end %>

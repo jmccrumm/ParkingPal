@@ -1,0 +1,1 @@
+<%= image_tag("parkingpal.png", size: '32', :alt => "Parking Pal") %>

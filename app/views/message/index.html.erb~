@@ -11,7 +11,7 @@
 <%	 message = receipt %>
 <%	 #read = receipt.is_unread? %>
 <% if message.participants[1] != nil %>
-		<%= message.participants[1].name %> --
+		<%= message.participants[1].name%> --
 		<%= link_to message.subject, message_display_path(msg: message) %> -- 
 		<%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %><br>
 	<% end %>
