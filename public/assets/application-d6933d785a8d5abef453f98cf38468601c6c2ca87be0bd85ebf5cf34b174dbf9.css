@@ -1,0 +1,389 @@
+/* line 5, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.overlayHidden {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* line 16, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.overlayVisible {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 27, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.popup {
+  margin: 70px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+}
+
+/* line 41, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decorations: none;
+  color: #333;
+}
+
+/* line 52, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.popup .close:hover {
+  color: red;
+}
+
+/* line 56, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/map.scss */
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+/* line 5, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/message.scss */
+#body_ {
+  background-color: #d7d7d7;
+  width: 25%;
+  padding: 20px;
+  border: 2px solid #592a6e;
+  border-radius: 4px;
+  color: black;
+}
+
+/* line 14, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/message.scss */
+#recipient_ {
+  background-color: #d7d7d7;
+  border: 2px solid #592a6e;
+  width: 200px;
+  height: 30px;
+}
+
+/* line 21, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/message.scss */
+#subject_ {
+  background-color: #d7d7d7;
+  border: 2px solid #592a6e;
+  width: 200px;
+  height: 30px;
+}
+
+/* line 28, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/message.scss */
+#submit {
+  padding: 0px;
+  color: #141e2a;
+  width: 100px;
+  display: inline;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #d7d7d7;
+  border: 2px solid #592a6e;
+  margin-left: 225px;
+  margin-top: 10px;
+}
+/* line 5, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+table {
+  table-layout: fixed;
+  width: 65%;
+  border-collapse: collapse;
+}
+
+/* line 11, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+td {
+  border-right: 12px solid grey;
+  border-left: 12px solid grey;
+  height: 75px;
+}
+
+/* line 17, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+td a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 25, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+tr:nth-child(odd) td {
+  border-bottom: 12px solid black;
+}
+
+/* line 31, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+tr:nth-child(4n) {
+  border: 0px solid transparent;
+}
+/* line 33, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+tr:nth-child(4n) td {
+  border-right: 0px solid transparent;
+  border-left: 0px solid transparent;
+}
+
+/* line 40, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkinglot.scss */
+tr:nth-child(4n - 1) {
+  border: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+}
+/* line 5, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkingspot.scss */
+#spotInfo {
+  padding: 2ex;
+  position: absolute;
+  border: 2px double black;
+  background: -webkit-radial-gradient(#B0C4DE, #5F9EA0, #2F4F4F);
+  background: radial-gradient(#B0C4DE, #5F9EA0, #2F4F4F);
+}
+
+/* line 13, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkingspot.scss */
+p {
+  font-family: Georgia, serif;
+  font-variant: small-caps;
+  font-weight: 900;
+  align: center;
+}
+
+/* line 21, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkingspot.scss */
+p.open {
+  color: green;
+}
+
+/* line 25, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkingspot.scss */
+p.taken {
+  color: red;
+}
+
+/* line 28, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkingspot.scss */
+p.reserved {
+  color: yellow;
+}
+
+/* line 32, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkingspot.scss */
+.notice-success {
+  width: 600px;
+  background-color: green;
+  border: 1px solid #2dd22d;
+  border-radius: 25px;
+  padding: 15px;
+  margin: 15px;
+  text-align: center;
+  text-color: black;
+}
+
+/* line 43, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/parkingspot.scss */
+.notice-failure {
+  width: 600px;
+  background-color: red;
+  border: 1px solid #e61919;
+  border-radius: 25px;
+  padding: 15px;
+  margin: 15px;
+  text-align: center;
+  text-color: black;
+}
+/* line 5, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/stats.scss */
+.stats {
+  border: 2px solid #391C0C;
+  padding: 20px;
+  background-color: #290c35;
+  overflow: hidden;
+  width: 50%;
+  margin-left: 250px;
+}
+/* line 5, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/users.scss */
+h2 {
+  font-size: 20px;
+  display: left;
+  color: #531801;
+  text-align: left;
+  padding: 0px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* line 17, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/users.scss */
+p {
+  color: #00000f;
+  padding-left: 20px;
+}
+
+/* line 23, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/users.scss */
+.bb {
+  border: 2px solid #391C0C;
+  padding-bottom: 10px;
+  background-color: #ab9fb0;
+  overflow: hidden;
+  width: 50%;
+}
+
+/* line 31, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/users.scss */
+#user_email {
+  color: #00000f;
+}
+
+/* line 35, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/users.scss */
+#update {
+  padding: 0px;
+  color: #696666;
+  width: 100px;
+  display: inline;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #fff7f7;
+  margin-left: 150px;
+  margin-top: 15px;
+  margin-bottom: 60px;
+}
+/* line 1, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/welcome.scss */
+h1 {
+  font-size: 40px;
+  display: inline;
+  color: #00000f;
+  vertical-align: middle;
+  padding: 12px;
+  padding-right: 40px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+/* line 20, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 24, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* line 30, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+[class*="col-"] {
+  padding: 15px;
+}
+
+/* line 34, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+.col-1 {
+  width: 100%;
+}
+
+/* line 39, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+html {
+  font-family: "Calibri", sans-serif;
+}
+
+/* line 43, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+body {
+  background-color: #d9cce0;
+  /*background-color: darkslategrey;*/
+  /*width: 415px;*/
+}
+
+/* line 49, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+h1 {
+  font-size: 40px;
+  display: inline;
+  color: #a1dd00;
+  vertical-align: middle;
+  padding: 12px;
+  padding-right: 40px;
+}
+
+/* line 60, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 65, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+a:visited {
+  color: black;
+}
+
+/* line 69, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+a:hover {
+  color: dimgrey;
+}
+
+/* line 73, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+.menu i {
+  padding: 8px;
+  margin: 7px;
+  box-shadow: 0 5px 7px black, 0 1px 2px black;
+  height: 60px;
+  width: 60px;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* line 85, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+.container {
+  background-color: #2f2138;
+  color: white;
+  height: 110px;
+  padding-top: 20px;
+  padding-left: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* line 95, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+.container li {
+  padding: 0px;
+  color: white;
+  box-shadow: 0 1px 5px #d9cce0, 0 1px 2px #d9cce0;
+  width: 100px;
+  display: inline;
+  margin: 7px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  float: right;
+}
+
+/* line 108, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+.container li:hover {
+  background-color: #d9cce0;
+}
+
+/* line 112, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+.container i {
+  margin-right: 15px;
+  margin-top: -10px;
+  font-size: 25px;
+}
+
+/* line 119, /home/ensign/Desktop/ParkingProject/Group8/app/assets/stylesheets/application.css.scss */
+.img {
+  background-color: white;
+}
