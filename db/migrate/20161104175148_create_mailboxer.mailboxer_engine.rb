@@ -3,37 +3,37 @@ class CreateMailboxer < ActiveRecord::Migration
   def self.up
   #Tables
     #Conversations
-    create_table :mailboxer_conversations do |t|
-      t.column :subject, :string, :default => ""
-      t.column :created_at, :datetime, :null => false
-      t.column :updated_at, :datetime, :null => false
+    create_table :mailboxer_conversations do |item|
+      item.column :subject, :string, :default => ""
+      item.column :created_at, :datetime, :null => false
+      item.column :updated_at, :datetime, :null => false
     end
     #Receipts
-    create_table :mailboxer_receipts do |t|
-      t.references :receiver, :polymorphic => true
-      t.column :notification_id, :integer, :null => false
-      t.column :is_read, :boolean, :default => false
-      t.column :trashed, :boolean, :default => false
-      t.column :deleted, :boolean, :default => false
-      t.column :mailbox_type, :string, :limit => 25
-      t.column :created_at, :datetime, :null => false
-      t.column :updated_at, :datetime, :null => false
+    create_table :mailboxer_receipts do |item|
+      item.references :receiver, :polymorphic => true
+      item.column :notification_id, :integer, :null => false
+      item.column :is_read, :boolean, :default => false
+      item.column :trashed, :boolean, :default => false
+      item.column :deleted, :boolean, :default => false
+      item.column :mailbox_type, :string, :limit => 25
+      item.column :created_at, :datetime, :null => false
+      item.column :updated_at, :datetime, :null => false
     end
     #Notifications and Messages
-    create_table :mailboxer_notifications do |t|
-      t.column :type, :string
-      t.column :body, :text
-      t.column :subject, :string, :default => ""
-      t.references :sender, :polymorphic => true
-      t.column :conversation_id, :integer
-      t.column :draft, :boolean, :default => false
-      t.string :notification_code, :default => nil
-      t.references :notified_object, :polymorphic => true
-      t.column :attachment, :string
-      t.column :updated_at, :datetime, :null => false
-      t.column :created_at, :datetime, :null => false
-      t.boolean :global, default: false
-      t.datetime :expires
+    create_table :mailboxer_notifications do |item|
+      item.column :type, :string
+      item.column :body, :text
+      item.column :subject, :string, :default => ""
+      item.references :sender, :polymorphic => true
+      item.column :conversation_id, :integer
+      item.column :draft, :boolean, :default => false
+      item.string :notification_code, :default => nil
+      item.references :notified_object, :polymorphic => true
+      item.column :attachment, :string
+      item.column :updated_at, :datetime, :null => false
+      item.column :created_at, :datetime, :null => false
+      item.boolean :global, default: false
+      item.datetime :expires
     end
 
   #Indexes

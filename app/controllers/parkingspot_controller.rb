@@ -14,10 +14,12 @@ class ParkingspotController < ApplicationController
 		purpose = params[:purpose].to_i || -1
 		spot_id = params[:spot_id].to_i || -1
 		user_id = params[:user_id].to_i || -1
+		spot_valid = false
 
 		if spot_id > 0 && user_id > 0
 			@spot = Parkingspot.find(spot_id)
 			@user = User.find(user_id)
+			spot_valid = true
 		end
 
 		case purpose
@@ -58,7 +60,7 @@ class ParkingspotController < ApplicationController
 		end
 
 
-		if spot_id > 0 && user_id > 0
+		if spot_valid
 			@spot.save!
 			@user.save!
 		end

@@ -1,9 +1,9 @@
 #some migrate...
 class CreateMessages < ActiveRecord::Migration
   def change
-    create_table :messages do |t|
+    create_table :messages do |item|
 
-      t.timestamps null: false
+      item.timestamps null: false
     end
   end
 end

@@ -6,8 +6,8 @@ class MessageController < ApplicationController
 	def index
 		#current_user gets the last conversation (chronologically, the first in the inbox)
 		#conversation = current_user.mailbox.inbox.first
-		mailboxVar = current_user.mailbox
-		@receipts = mailboxVar.conversations
+		mailbox = current_user.mailbox
+		@receipts = mailbox.conversations
 		#@receipts = conversation
 
 		#conversation = current_user.mailbox.inbox
@@ -25,35 +25,31 @@ class MessageController < ApplicationController
 	end
 
 	def compose
-		#recipient = User.find(email: params['recipient'])
-		@recipient = User.where(["email = :r", {r: params['recipient'][0]}])
-		@subject = params['subject'][0]
-		@body = params['body'][0]
+		recipient = User.where(["email = :r", {r: params['recipient'][0]}])
+		subject = params['subject'][0]
+		body = params['body'][0]
 
-		if !@recipient.empty?
-			session[:recipient] = @recipient[0].email
+		if !recipient.empty?
+			session[:recipient] = recipient[0].email
 		end
-		session[:subject] = @subject
-		session[:body] = @body3
+		session[:subject] = subject
+		session[:body] = body
 
-		if @recipient.empty?
+		if recipient.empty?
 			flash[:failure] = "User does not exist"
-			redirect_to message_new_path
-		elsif @subject.empty?
+		elsif subject.empty?
 			flash[:failure] = "Please enter a subject"
-			redirect_to message_new_path
-		elsif @body.empty?
+		elsif body.empty?
 			flash[:failure] = "Please enter something to send"
-			redirect_to message_new_path
 		else
-			conversation = current_user.send_message(@recipient, @body, @subject).conversation
-			session[:recipient] = ''
-			session[:subject] = ''
-			session[:body] = ''
+			conversation = current_user.send_message(recipient, body, subject).conversation
+			session[:recipient] = session[:subject] = session[:body] = ''
 			flash[:success] = "Successfully sent message"
-			redirect_to message_path
+			redirect_to message_path and return
 		end
-		
+
+		redirect_to message_new_path # did not send successfully
+
 	end
 
 	def new

@@ -98,11 +98,6 @@ ActiveRecord::Schema.define(version: 20161104175151) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "schedules", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "stats", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

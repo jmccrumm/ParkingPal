@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
 	# :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,
 		:recoverable, :rememberable, :trackable, :validatable
-
-	has_one :schedule
 	
 	acts_as_messageable
 
@@ -15,6 +13,7 @@ class User < ActiveRecord::Base
 
 	def mailboxer_email(object)
 		return self.email
+		object = object
 	end
 
 	validates :name, presence: true

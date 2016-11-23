@@ -1,9 +1,9 @@
 #some migrate...
 class CreateWelcomes < ActiveRecord::Migration
   def change
-    create_table :welcomes do |t|
+    create_table :welcomes do |item|
 
-      t.timestamps null: false
+      item.timestamps null: false
     end
   end
 end
