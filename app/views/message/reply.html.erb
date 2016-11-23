@@ -17,4 +17,7 @@
   <div class="actions">
     <%= submit_tag "Send", id: 'submit' %>
   </div>
+
 <% end %>
+
+<%= link_to 'Back', message_display_path(msg: @msgid) %>

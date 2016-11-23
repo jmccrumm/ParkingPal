@@ -1,15 +1,19 @@
-From: <%= @message.participants[1].name %><br>
-Subject: <%= @message.subject %><br>
-Last message: <%= @message.updated_at.strftime("%-d %B %Y, %H:%M:%S") %><br>
-
+<br>
+<div class="convoheading">
+	<span>From: </span>&emsp;&emsp;&emsp;&emsp;&emsp;<%= @message.participants[1].name %><br>
+	<span>Subject: </span>&emsp;&emsp;&emsp;&ensp;&nbsp;<%= @message.subject %><br>
+	<span>Last message: </span><%= @message.updated_at.strftime("%-d %B %Y, %H:%M:%S") %><br>
+</div>
 <br>
 <% receipt = @message.receipts_for(current_user)[0] %>
 
 	<% @message.receipts.each do |receipt| %>
 			<% if @duplicated %>
-				<%= receipt.receiver.name %>: 
+			<div class="conversation">
+				<span><%= receipt.receiver.name %>: </span>
 				<%= receipt.message.body %>
-				<br>		<br>
+			</div>
+				<br>
 			<% end %>
 			<% @duplicated = !@duplicated; %>
 	<% end %>

@@ -35,7 +35,7 @@
 <br/>
 
 
-<% if current_page?(message_display_path) || current_page?(message_new_path) %>
+<% if current_page?(message_display_path) || current_page?(message_new_path) || current_page?(message_reply_path) %>
   <%= link_to("Inbox", message_path) %>
   <br/>
 <% end %>

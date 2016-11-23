@@ -7,13 +7,20 @@
   <div class="notice-success"><%= flash[:success] %></div>
 <% end %>
 
-<% @receipts.each do |receipt| %>
-<%	 message = receipt %>
-<%	 #read = receipt.is_unread? %>
-<% if message.participants[1] != nil && !message.is_deleted?(current_user)  %>
-		<%= message.participants[1].name %> --
-		<%= link_to message.subject, message_display_path(msg: message) %> -- 
-		<%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
-		<%= link_to "Delete", message_trash_path(msg: message) %><br>
+
+<table id="inbox">
+
+	<% @receipts.each do |receipt| %>
+	<%	 message = receipt %>
+	<%	 #read = receipt.is_unread? %>
+		<% if message.participants[1] != nil && !message.is_deleted?(current_user)  %>
+			<tr>
+				<td><%= message.participants[1].name %></td>
+				<td><%= link_to message.subject, message_display_path(msg: message) %></td>
+				<td><%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></td>
+				<td><%= link_to "Delete", message_trash_path(msg: message) %></td>
+			</tr>
+		<% end %>
 	<% end %>
-<% end %>
+
+</table>

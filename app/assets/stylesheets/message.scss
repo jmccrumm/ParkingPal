@@ -39,3 +39,49 @@
     margin-left: 225px;
     margin-top: 10px;
 }
+
+#inbox {
+    table-layout: fixed;
+    width: 65%;
+    border-collapse: collapse;
+    text-align: center;
+
+    a {
+        font-weight: bold;
+    }
+
+    td {
+        border: 2px solid #592a6e;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #483D8B;
+    }
+
+    tr:nth-child(even) {
+        background-color: #7B68EE;
+    }
+}
+
+span {
+    font-weight: bold;
+}
+
+.conversation {
+    border: 2px solid #592a6e;
+    padding-bottom: 10px;
+    background-color: #7B68EE;
+    overflow: hidden;
+    width: 50%;
+}
+
+.convoheading {
+    border: 2px solid #592a6e;
+    padding-left: 10%;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #483D8B;
+    overflow: hidden;
+    width: 50%;
+}
