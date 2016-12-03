@@ -1,0 +1,7 @@
+   250.4: flog total
+    14.7: flog/method average
+
+    66.8: ParkingspotController#update     app/controllers/parkingspot_controller.rb~:13
+    46.3: MessageController#compose        app/controllers/message_controller.rb:27
+    32.0: ParkingspotController#index      app/controllers/parkingspot_controller.rb~:3
+    21.2: StatsController#index            app/controllers/stats_controller.rb:4

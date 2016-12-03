@@ -726,13 +726,12 @@
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/models/user.rb": [
-        1,
-        null,
         null,
         1,
         null,
         null,
         1,
+        null,
         null,
         1,
         null,
@@ -741,6 +740,7 @@
         null,
         null,
         1,
+        0,
         0,
         null,
         null,
@@ -759,38 +759,37 @@
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/map_helper.rb": [
+        null,
         1,
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/message_helper.rb": [
+        null,
         1,
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/parkinglot_helper.rb": [
+        null,
         1,
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/parkingspot_helper.rb": [
-        1,
-        null
-      ],
-      "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/schedule_helper.rb": [
+        null,
         1,
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/stats_helper.rb": [
+        null,
         1,
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/users_helper.rb": [
+        null,
         1,
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/models/parkingspot.rb": [
+        null,
         1,
         1,
         1,
@@ -843,11 +842,12 @@
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/models/welcome.rb": [
+        null,
         1,
         null
       ]
     },
-    "timestamp": 1479695464
+    "timestamp": 1480540705
   },
   "Cucumber Features": {
     "coverage": {
@@ -1453,13 +1453,12 @@
         1,
         null,
         1,
-        null,
-        1,
         0,
         null,
         null,
         1,
         2,
+        0,
         null,
         null,
         1,
@@ -1509,19 +1508,6 @@
         null,
         1,
         null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
         1,
         1,
         1,
@@ -1535,10 +1521,38 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/features/step_definitions/failed_registration_steps.rb": [
@@ -1912,7 +1926,7 @@
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/features/step_definitions/user_login_steps.rb": [
         1,
-        2,
+        1,
         null,
         null,
         1,
@@ -1997,18 +2011,13 @@
         1,
         1,
         null,
-        26,
-        26,
+        24,
+        24,
         null,
         null,
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/application_helper.rb": [
-        null,
-        1,
-        null
-      ],
-      "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/map_helper.rb": [
         null,
         1,
         null
@@ -2024,11 +2033,6 @@
         null
       ],
       "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/parkingspot_helper.rb": [
-        null,
-        1,
-        null
-      ],
-      "/home/ensign/Desktop/ParkingProject/Group8/app/helpers/schedule_helper.rb": [
         null,
         1,
         null
@@ -2083,17 +2087,19 @@
         1,
         1,
         1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
         1,
         null,
         1,
         1,
         1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
         null,
         1,
         null,
@@ -2124,6 +2130,7 @@
         null,
         null,
         0,
+        null,
         null,
         null,
         null,
@@ -2166,7 +2173,6 @@
         null,
         null,
         1,
-        null,
         2,
         2,
         2,
@@ -2179,21 +2185,19 @@
         null,
         2,
         1,
-        1,
-        1,
-        0,
-        0,
-        1,
-        0,
+        null,
         0,
         null,
-        1,
-        1,
+        0,
+        null,
+        null,
         1,
         1,
         1,
         1,
         null,
+        null,
+        1,
         null,
         null,
         null,
@@ -2234,6 +2238,6 @@
         null
       ]
     },
-    "timestamp": 1479696575
+    "timestamp": 1480543088
   }
 }

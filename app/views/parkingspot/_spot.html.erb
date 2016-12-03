@@ -1,45 +1,45 @@
 <div align="center">
 <%-# display handicap image if needed -%>
-<% if @spot.spot_type == 'handicap' %>
+<% if @current_spot.spot_type == 'handicap' %>
 	<%= image_tag("handicap.gif", border: 0, :size => '35x35', align: 'left') %>
 	<br>
 <% end %>
 
 <%-# display spot  -%>
-<p><%= "Spot ##{@spot.id}" %></p>
+<p><%= "Spot ##{@current_spot.id}" %></p>
 
 <%-# display status of spot (open, taken, reserved) -%>
-<p class="<%= @spot.status %>" id="spot"><%= @spot.status.upcase %></p>
+<p class="<%= @current_spot.status %>" id="spot"><%= @current_spot.status.upcase %></p>
 
 <%-# display user holding the spot and a link to message them -%>
-<% if @spot.occupying != nil  %>
+<% if @current_spot.occupying != nil  %>
 	<p>
 		<%= image_tag("profile.png", size: '15x15') %>
 		<%-# signed in user is holding the spot -%>
-		<% if user_signed_in? && @user.id == @spot.occupying %>
+		<% if user_signed_in? && @current_user.id == @current_spot.occupying %>
 			<%= "Me" %>
 		<% else %>
-			<%= User.find(@spot.occupying).name %>
-			<%= link_to image_tag("message.png", size: '20x20'), message_new_path(@spot.occupying) if user_signed_in? %>
+			<%= User.find(@current_spot.occupying).name %>
+			<%= link_to image_tag("message.png", size: '20x20'), message_new_path(@current_spot.occupying) if user_signed_in? %>
 		<% end %>
 	</p>
 <% end %>
 
 
 <%-# user doesn't already have a spot and wants to take open spot -%>
-<% if user_signed_in? && !@user.is_parked && @spot.status == 'open' %>
-<%= link_to 'Take spot', updatespot_path(:purpose => 1, :user_id => @user.id, :spot_id => @spot.id), {id: 'takeSpot'} %>
+<% if user_signed_in? && !@current_user.is_parked && @current_spot.status == 'open' %>
+<%= link_to 'Take spot', updatespot_path(:purpose => 1, :user_id => @current_user.id, :spot_id => @current_spot.id), {id: 'takeSpot'} %>
 <br />
-<%= link_to 'Reserve spot (5 mins)', updatespot_path(:purpose => 2, :user_id => @user.id, :spot_id => @spot.id ), {id: 'reserveSpot'} %><br />
+<%= link_to 'Reserve spot (5 mins)', updatespot_path(:purpose => 2, :user_id => @current_user.id, :spot_id => @current_spot.id ), {id: 'reserveSpot'} %><br />
 
 <%-# user has previously reserved the spot and wants to take it or cancel -%>
-<% elsif user_signed_in? && @user.id == @spot.occupying && @spot.status == 'reserved' %>
-<%= link_to 'Take spot', updatespot_path(:purpose => 1, :user_id => @user.id, :spot_id => @spot.id), {id: 'takeSpot'} %><br />
-<%= link_to 'Cancel reservation', updatespot_path(:purpose => 4, :user_id => @user.id, :spot_id => @spot.id ), {id: 'cancelSpot'} %><br />
+<% elsif user_signed_in? && @current_user.id == @current_spot.occupying && @current_spot.status == 'reserved' %>
+<%= link_to 'Take spot', updatespot_path(:purpose => 1, :user_id => @current_user.id, :spot_id => @current_spot.id), {id: 'takeSpot'} %><br />
+<%= link_to 'Cancel reservation', updatespot_path(:purpose => 4, :user_id => @current_user.id, :spot_id => @current_spot.id ), {id: 'cancelSpot'} %><br />
 
 <%-# user is holding spot and wants to leave -%>
-<% elsif user_signed_in? && @user.id == @spot.occupying && @spot.status == 'taken' %>
-<%= link_to 'Leave spot', updatespot_path(:purpose => 3, :user_id => @user.id, :spot_id => @spot.id ), {id: 'leaveSpot'} %><br />
+<% elsif user_signed_in? && @current_user.id == @current_spot.occupying && @current_spot.status == 'taken' %>
+<%= link_to 'Leave spot', updatespot_path(:purpose => 3, :user_id => @current_user.id, :spot_id => @current_spot.id ), {id: 'leaveSpot'} %><br />
 
 <% end %>
 

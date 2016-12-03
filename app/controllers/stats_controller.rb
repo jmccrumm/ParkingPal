@@ -1,7 +1,7 @@
 #stats controller
 class StatsController < ApplicationController
+	require 'gchart'
 	def index
-		require 'gchart'
 		totalspots = Parkingspot.count('id');
 		available = Parkingspot.where(status: 'open').count('id');
 		reserved = Parkingspot.where(status: 'reserved').count('id');

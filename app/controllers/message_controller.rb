@@ -42,6 +42,7 @@ class MessageController < ApplicationController
 		elsif body.empty?
 			flash[:failure] = "Please enter something to send"
 		else
+
 			conversation = current_user.send_message(recipient, body, subject).conversation
 			session[:recipient] = session[:subject] = session[:body] = ''
 			flash[:success] = "Successfully sent message"

@@ -33,19 +33,24 @@ class ParkingspotController < ApplicationController
 			spot_valid = true
 		end
 
-		spotis_parked = false
+		spotStatus = 'open'
+		spotIs_parked = false
 
 		if purpose == 1
-			spotis_parked = true
+			spotStatus = 'taken'
+			spotIs_parked = true
+		elsif purpose == 2
+			spotStatus = 'reserved'
+				# add code to start 5 min countdown for reservation
 		elsif purpose > 4
 				flash[:failure] = "Unknown Error";
 		end
 
 		flash[:success] = $successResponse[purpose]
 
-		@spot.status = ParkingspotController.determinecurrentspotstatus(purpose)
+		@spot.status = spotStatus
 		@spot.occupying = ParkingspotController.determineifiseridisneeded(purpose, @user)
-		@user.is_parked = spotis_parked
+		@user.is_parked = spotIs_parked
 		
 
 		if spot_valid
@@ -61,16 +66,6 @@ class ParkingspotController < ApplicationController
 			user.id
 		else
 			nil
-		end
-	end
-
-	def self.determinecurrentspotstatus(purpose)
-		if purpose == 1
-			'taken'
-		elsif purpose == 2
-			'reserved'
-		else
-			'open'
 		end
 	end
 
