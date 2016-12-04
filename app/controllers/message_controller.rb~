@@ -26,6 +26,9 @@ class MessageController < ApplicationController
 	end
 
 	def compose
+		#recipient = User.where(["email = :r", {r: params['recipient'][0]}])
+		#subject = params['subject'][0]
+		#body = params['body'][0]
 		parameters = MessageController.getparams(params)
 
 		setcomposesessions(parameters)
@@ -34,6 +37,15 @@ class MessageController < ApplicationController
 			sendmessage(parameters)
 			redirect_to message_path and return
 		end
+
+		#setcomposesessions(recipient, subject, body)
+
+		#if setflasherrors(recipient, subject, body)
+		#	current_user.send_message(recipient, body, subject).conversation
+		#	session[:recipient] = session[:subject] = session[:body] = ''
+		#	flash[:success] = "Successfully sent message"
+		#	redirect_to message_path and return
+		#end
 
 		redirect_to message_new_path # did not send successfully
 

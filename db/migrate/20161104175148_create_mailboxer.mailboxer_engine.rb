@@ -1,4 +1,5 @@
 # This migration comes from mailboxer_engine (originally 20110511145103)
+# :reek:DuplicateMethodCall { max_calls: 5 }
 class CreateMailboxer < ActiveRecord::Migration
   def self.up
   #Tables

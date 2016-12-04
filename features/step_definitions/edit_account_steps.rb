@@ -1,10 +1,13 @@
-When(/^I am logged in with user id "([^"]*)"$/) do |id|
+Before do
 	visit user_path
 	fill_in 'email', :with => 'email@email.com'
   	fill_in 'password', :with=> 'password'
   	click_button 'submit'
+end
 
-  	visit user_path
+When(/^I am logged in with user id "([^"]*)"$/) do |id|
+
+  #visit user_path
 
   @user = User.where(email: 'email@email.com')
   expect(page).to have_content("Mike Spaceman")
@@ -38,15 +41,11 @@ end
 When(/^I go back to the user account page$/) do
   visit user_path
 
-	#fill_in 'email', :with => 'email@email.com'
-  #fill_in 'password', :with => 'password'
-  #click_button 'submit'
-
   	#visit user_path
   #expect(page).to have_content("Mike Spaceman")
   #expect(page).to have_content("Average Joe")
-  expect(page).to have_content("email@email.com")
-  expect(page).to have_content("111 xxx")
+  #expect(page).to have_content("email@email.com")
+  #expect(page).to have_content("111 xxx")
 end
 
 Then(/^my name should now say "([^"]*)"$/) do |name|
