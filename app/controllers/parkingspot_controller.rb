@@ -2,14 +2,12 @@
 		$successResponse = ["", "Successfully taken the spot", "Successfully reserved the spot", "Successfully left the spot", "Successfully canceled your reservation"]
 
 #handles parking spot logic
+# :reek:DuplicateMethodCall { max_calls: 2 }
 class ParkingspotController < ApplicationController
-	#def self.successResponses
-	#end
-
 	def index
 		id = params[:id] || 1
-		@current_spot = Parkingspot.find(id)
-		@current_user = current_user
+		@current_spot = Parkingspot.find(id) || nil
+		@current_user = current_user || nil
 		if @current_spot.occupying != nil
 			getuseremail(@current_spot)
 		end
@@ -21,36 +19,13 @@ class ParkingspotController < ApplicationController
 	end
 	
 	def update
-		#ParkingspotController.successResponses
-		purpose = params[:purpose].to_i || -1
-		spot_id = params[:spot_id].to_i || -1
-		user_id = params[:user_id].to_i || -1
-		spot_valid = false
+		parameters = ParkingspotController.getparams(params)
 
-		if spot_id > 0 && user_id > 0
-			@spot = Parkingspot.find(spot_id)
-			@user = User.find(user_id)
-			spot_valid = true
-		end
+		if ParkingspotController.checkifvalid(parameters)
+			
+			ParkingspotController.saveupdatedinfo(Parkingspot.find(parameters[1]), User.find(parameters[2]), parameters[0])
+			flash[:success] = $successResponse[parameters[0]]
 
-		spotis_parked = false
-
-		if purpose == 1
-			spotis_parked = true
-		elsif purpose > 4
-				flash[:failure] = "Unknown Error";
-		end
-
-		flash[:success] = $successResponse[purpose]
-
-		@spot.status = ParkingspotController.determinecurrentspotstatus(purpose)
-		@spot.occupying = ParkingspotController.determineifiseridisneeded(purpose, @user)
-		@user.is_parked = spotis_parked
-		
-
-		if spot_valid
-			@spot.save!
-			@user.save!
 		end
 
 		redirect_to parkinglot_path
@@ -74,4 +49,39 @@ class ParkingspotController < ApplicationController
 		end
 	end
 
+	def self.determineifparkingspotisparked(purpose)
+		if purpose == 1
+			true
+		else
+			false
+		end
+	end
+
+	def self.saveupdatedinfo(current_spot, current_user, purpose)
+			current_spot.status = ParkingspotController.determinecurrentspotstatus(purpose)
+			current_spot.occupying = ParkingspotController.determineifiseridisneeded(purpose, current_user)
+			current_user.is_parked = ParkingspotController.determineifparkingspotisparked(purpose)
+			ParkingspotController.saveupdated(current_spot, current_user)
+	end
+
+	def self.saveupdated(current_spot, current_user)
+			current_spot.save!
+			current_user.save!
+	end
+
+	def self.getparams(params)
+		[params[:purpose].to_i,
+		params[:spot_id].to_i,
+		params[:user_id].to_i]
+	end
+
+	def self.checkifvalid(params)
+		if params[1] > 0 && params[2] > 0
+			true
+		else 
+			false
+		end
+	end
+
 end
+
